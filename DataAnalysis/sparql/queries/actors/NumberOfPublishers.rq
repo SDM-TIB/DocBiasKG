@@ -1,0 +1,7 @@
+PREFIX base: <https://nobias-project.eu/>
+
+SELECT (COUNT(DISTINCT ?s) AS ?PublisherCount) WHERE {
+  ?s rdf:type base:RandomVariableAtom;
+    base:rva_name ?name.
+  FILTER(REGEX(?name, "PUBCREDLAT", "i"))
+}

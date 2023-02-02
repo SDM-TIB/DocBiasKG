@@ -1,0 +1,46 @@
+id,publisherID,ratingLabel,ratingValue,factcheckID
+BiasReview1,Publisher1,extreme right bias,3,FactcheckResource1
+BiasReview2,Publisher4,extreme right bias,3,FactcheckResource1
+BiasReview3,Publisher29,extreme left bias,-3,FactcheckResource1
+BiasReview4,Publisher37,extreme right bias, fake news,3,FactcheckResource1
+BiasReview5,Publisher8,right bias,2,FactcheckResource1
+BiasReview6,Publisher9,left biased,-2,FactcheckResource1
+BiasReview7,Publisher41,right bias,2,FactcheckResource1
+BiasReview8,Publisher11,questionable,3,FactcheckResource1
+BiasReview9,Publisher44,right bias,2,FactcheckResource1
+BiasReview10,Publisher46,right bias,2,FactcheckResource1
+BiasReview11,Publisher12,right bias,2,FactcheckResource1
+BiasReview12,Publisher48,questionable,3,FactcheckResource1
+BiasReview13,Publisher56,right bias,2,FactcheckResource1
+BiasReview14,Publisher59,left bias,-2,FactcheckResource1
+BiasReview15,Publisher65,extreme right bias,3,FactcheckResource1
+BiasReview16,Publisher68,questionable source,3,FactcheckResource1
+BiasReview17,Publisher19,least biased,0,FactcheckResource1
+BiasReview18,Publisher72,right bias,2,FactcheckResource1
+BiasReview19,Publisher21,right bias,2,FactcheckResource1
+BiasReview20,Publisher14,left center bias,-1,FactcheckResource1
+BiasReview21,Publisher16,right bias,2,FactcheckResource1
+BiasReview22,Publisher77,right bias,2,FactcheckResource1
+BiasReview23,Publisher69,right bias,2,FactcheckResource1
+BiasReview24,Publisher80,questionable source,3,FactcheckResource1
+BiasReview25,Publisher96,right bias,2,FactcheckResource1
+BiasReview26,Publisher104,left bias,-2,FactcheckResource1
+BiasReview27,Publisher79,right bias,2,FactcheckResource1
+BiasReview28,Publisher25,left center bias,-1,FactcheckResource1
+BiasReview29,Publisher85,questionable source,3,FactcheckResource1
+BiasReview30,Publisher90,right bias -fake news,3,FactcheckResource1
+BiasReview31,Publisher92,right bias,2,FactcheckResource1
+BiasReview32,Publisher24,right bias,2,FactcheckResource1
+BiasReview33,Publisher98,right bias,2,FactcheckResource1
+BiasReview34,Publisher100,left bias,-2,FactcheckResource1
+BiasReview35,Publisher102,right bias,2,FactcheckResource1
+BiasReview36,Publisher26,left bias,-2,FactcheckResource1
+BiasReview37,Publisher39,left biased,-2,FactcheckResource1
+BiasReview38,Publisher15,left bias,-2,FactcheckResource1
+BiasReview39,Publisher57,left center,-1,FactcheckResource1
+BiasReview40,Publisher18,left center bias,-1,FactcheckResource1
+BiasReview41,Publisher20,right bias,2,FactcheckResource1
+BiasReview42,Publisher23,questionable,3,FactcheckResource1
+BiasReview43,Publisher88,left center bias,-1,FactcheckResource1
+BiasReview44,Publisher93,right bias,2,FactcheckResource1
+BiasReview45,Publisher27,right bias,2,FactcheckResource1

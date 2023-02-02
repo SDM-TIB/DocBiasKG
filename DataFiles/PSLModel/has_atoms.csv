@@ -1,0 +1,3 @@
+RuleID,AtomID,Pos,Negated
+Rule1,Atom7,body,false
+Rule1,Atom4,head,false

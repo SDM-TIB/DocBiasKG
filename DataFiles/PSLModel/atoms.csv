@@ -1,0 +1,1 @@
+belongs_to,name,idPredicate1,BLOCK(N),Atom1Predicate2,FAKENEWS(N),Atom2Predicate3,"NEWSPUB(N,P)",Atom3Predicate4,PUBCREDLAT(P),Atom4Predicate5,USERCREDLAT(U),Atom5Predicate6,"USERSHARE(N,U)",Atom6Predicate7,PUBCRED(P),Atom7Predicate8,PUBCREDNOT(P),Atom8

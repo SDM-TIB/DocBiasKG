@@ -1,0 +1,22 @@
+# Associated ground rules to a RVA + dissatisfaction values
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX base: <https://nobias-project.eu/>
+SELECT ?rva ?name ?groundrule_reference ?rule ?dissatisfaction ?iteration
+WHERE {
+?rva <https://nobias-project.eu/rva_name> ?name .
+# When searching for specific RVAs we need to escape the brackets
+FILTER regex(?name, "FAKENEWS\\(BuzzFeed_Real_66\\)", "i") .
+
+?groundrule_groundatom a <https://nobias-project.eu/GroundRuleGroundAtom> .
+?groundrule_groundatom <https://nobias-project.eu/hasGroundAtom> ?rva .
+    
+?groundrule_groundatom <https://nobias-project.eu/hasGroundRule> ?groundrule_reference .
+?groundrule_reference <https://nobias-project.eu/hasTerm> ?maxTerm .
+?groundrule_reference <https://nobias-project.eu/instantiatesFrom> ?rule .
+?iterTerm <https://nobias-project.eu/hasTerm> ?maxTerm .
+ # TODO: Get last iteration through other query
+?iterTerm <https://nobias-project.eu/hasIteration> ?iteration .
+?iterTerm <https://nobias-project.eu/currentValue> ?dissatisfaction .
+} 
+ORDER BY DESC (?dissatisfaction)

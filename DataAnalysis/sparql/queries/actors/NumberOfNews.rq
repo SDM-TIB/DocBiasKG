@@ -1,0 +1,15 @@
+PREFIX base: <https://nobias-project.eu/>
+
+SELECT (COUNT(DISTINCT ?s) AS ?NewsCount) WHERE {
+  {
+    ?s rdf:type base:RandomVariableAtom;
+      base:rva_name ?name.
+    FILTER(REGEX(?name, "FAKENEWS", "i"))
+  }
+  UNION
+  {
+    ?s rdf:type base:ObservedAtom;
+      base:obsatom_name ?name.
+    FILTER(REGEX(?name, "FAKENEWS", "i"))
+  }
+}

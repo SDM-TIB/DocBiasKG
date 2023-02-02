@@ -1,0 +1,19 @@
+# All publishers and their related RVAs for inferring credibility + observed credibility from MediaBiasFactCheck
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?s ?publisherURL ?relatedRVA ?inferredCredibility ?relatedOBS ?MBFCCredibility
+WHERE {
+?s rdf:type <https://nobias-project.eu/Publisher> ;
+   <https://nobias-project.eu/sourceName> ?publisherURL .
+?instArg <https://nobias-project.eu/originatesFrom> ?s .
+?RvaAtomInst a <https://nobias-project.eu/RandomAtomInstArgument> .
+?RvaAtomInst <https://nobias-project.eu/hasArgument> ?instArg .
+?RvaAtomInst <https://nobias-project.eu/hasAtom> ?relatedRVA .
+?ObsAtomInst a <https://nobias-project.eu/ObsvAtomInstArgument> .
+?ObsAtomInst <https://nobias-project.eu/hasArgument> ?instArg .
+?ObsAtomInst <https://nobias-project.eu/hasAtom> ?relatedOBS .
+?relatedRVA <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom4> .
+?relatedRVA <https://nobias-project.eu/value> ?inferredCredibility .
+?relatedOBS <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom7> .
+?relatedOBS <https://nobias-project.eu/value> ?MBFCCredibility .
+} 

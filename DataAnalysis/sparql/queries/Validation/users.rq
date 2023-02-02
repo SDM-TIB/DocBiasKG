@@ -1,0 +1,13 @@
+# Validating that user predictions have been correctly labeled (with Credible/NotCredible)
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX base: <https://nobias-project.eu/>
+SELECT ?s ?value ?credibility 
+WHERE {
+?s rdf:type <https://nobias-project.eu/RandomVariableAtom> ;
+   base:rva_name ?name ;
+   base:value ?value ;
+   base:hasCredibilityClass ?credibility .
+FILTER regex(?name, "USERCREDLAT", "i") .
+FILTER (?value < "0.5" && ?credibility = "Credible" || ?value >= "0.5" && ?credibility = "NotCredible") .
+   } 

@@ -1,0 +1,25 @@
+# Total/Mean dissatisfaction by rule for a specific ground atom at every iteration
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX base: <https://nobias-project.eu/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT (SAMPLE(?rva) as ?rva) (SAMPLE(?name) as ?name) ?rule (COUNT(?dissatisfaction) AS ?groundrule_count) (SUM(xsd:float(?dissatisfaction)) as ?total_dissatisfaction) (AVG(xsd:float(?dissatisfaction)) as ?mean_dissatisfaction) (xsd:float(?iteration_number) as ?iterationNumber)
+WHERE {
+?rva <https://nobias-project.eu/rva_name> ?name .
+# When searching for specific RVAs we need to escape the brackets
+FILTER regex(?name, "FAKENEWS\\(BuzzFeed_Real_66\\)", "i") .
+
+?groundrule_groundatom a <https://nobias-project.eu/GroundRuleGroundAtom> .
+?groundrule_groundatom <https://nobias-project.eu/hasGroundAtom> ?rva .
+    
+?groundrule_groundatom <https://nobias-project.eu/hasGroundRule> ?groundrule_reference .
+?groundrule_reference <https://nobias-project.eu/hasTerm> ?maxTerm .
+?groundrule_reference <https://nobias-project.eu/instantiatesFrom> ?rule .
+?iterTerm <https://nobias-project.eu/hasTerm> ?maxTerm .
+ # TODO: Get last iteration through other query
+?iterTerm <https://nobias-project.eu/hasIteration> ?iteration .
+?iterTerm <https://nobias-project.eu/currentValue> ?dissatisfaction .
+?iteration <https://nobias-project.eu/iterationNumber> ?iteration_number .
+} 
+GROUP BY ?rule ?iteration_number
+ORDER BY ?rule ?iterationNumber

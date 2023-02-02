@@ -1,0 +1,25 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX base: <https://nobias-project.eu/>
+SELECT ?NewsID ?SharedByUser ?user_atom
+WHERE {
+    # Getting Usercred through Usercredlat(U)
+    ?inst_arg <https://nobias-project.eu/hasAtom> ?user_atom .
+    ?inst_arg rdf:type <https://nobias-project.eu/RandomAtomInstArgument> .
+    ?inst_arg <https://nobias-project.eu/hasArgument> ?user_arg_instance .
+    ?user_atom <https://nobias-project.eu/rva_name> ?user_atom_name .
+    ?user_arg_instance <https://nobias-project.eu/inst_arg_name> ?SharedByUser
+    #FILTER regex(?SharedByUser, "<Type specific UserID here>", "i") .
+    FILTER regex(?user_atom_name, "USERCREDLAT", "i") .
+    # Getting User argument from ObservedAtom UserShare(N,U)
+    ?obs_inst_arg rdf:type <https://nobias-project.eu/ObsvAtomInstArgument> .
+    ?obs_inst_arg <https://nobias-project.eu/hasAtom> ?obs_atom .
+    ?obs_inst_arg <https://nobias-project.eu/position> "2" .
+    ?obs_inst_arg <https://nobias-project.eu/hasArgument> ?user_arg_instance .
+    ?obs_inst_arg2 <https://nobias-project.eu/hasAtom> ?obs_atom .
+    ?obs_inst_arg2 <https://nobias-project.eu/position> "1" .
+    ?obs_inst_arg2 <https://nobias-project.eu/hasArgument> ?news_arg_instance .
+    ?news_arg_instance <https://nobias-project.eu/inst_arg_name> ?NewsID
+    #FILTER regex(?NewsID, "<Type specific news here>", "i") .
+}
