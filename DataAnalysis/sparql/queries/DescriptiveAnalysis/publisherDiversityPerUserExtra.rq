@@ -1,8 +1,9 @@
+# How many distinct users share a news article
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX base: <https://nobias-project.eu/>
-SELECT ?User (count(distinct ?PubID) as ?PublisherDiversityCount)
+SELECT ?NewsID (count(distinct ?User) as ?UserDiversityCount) ?groundTruth ?newsSource
 WHERE {
 # Getting Usercred through Usercredlat(U)
 ?inst_arg <https://nobias-project.eu/hasAtom> ?user_atom .
@@ -22,6 +23,14 @@ FILTER regex(?user_atom_name, "USERCREDLAT", "i") .
 ?obs_inst_arg2 <https://nobias-project.eu/hasArgument> ?news_arg_instance .
 ?news_arg_instance <https://nobias-project.eu/inst_arg_name> ?NewsID .
 
+?news_arg_instance <https://nobias-project.eu/originatesFrom> ?s .
+?s rdf:type <https://nobias-project.eu/News> ;
+   <https://nobias-project.eu/hasNewsTitle> ?newsTitle;
+   <https://nobias-project.eu/hasNewsUrl> ?newsURL;
+   <https://nobias-project.eu/hasSource> ?newsSource;
+   <https://nobias-project.eu/hasGroundTruth> ?groundTruth .
+
+
 # Getting Publisher argument from ObservedAtom NewsShare(N,P)
 ?obs_inst_arg_news rdf:type <https://nobias-project.eu/ObsvAtomInstArgument> .
 ?obs_inst_arg_news <https://nobias-project.eu/hasAtom> ?news_pub_atom .
@@ -35,5 +44,5 @@ FILTER regex(?user_atom_name, "USERCREDLAT", "i") .
 ?pub_arg_instance <https://nobias-project.eu/inst_arg_name> ?PubID .
 
 }
-GROUP BY (?User)
+GROUP BY ?NewsID ?groundTruth ?newsSource
 ORDER BY DESC(?PublisherDiversityCount)

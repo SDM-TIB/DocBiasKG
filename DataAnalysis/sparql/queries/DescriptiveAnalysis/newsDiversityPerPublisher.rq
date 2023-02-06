@@ -1,0 +1,37 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX base: <https://nobias-project.eu/>
+SELECT ?PublisherID (COUNT(distinct ?NewsID) AS ?newsDiversityPerPublisher)  (?inferredCredibility AS ?inferredPubCred) ?MBFCCredibility
+WHERE {
+    # Getting PublisherID
+    ?obs_inst_arg <https://nobias-project.eu/hasAtom> ?news_pub_atom .
+    ?news_pub_atom <https://nobias-project.eu/obsatom_name> ?news_pub_name .
+    ?obs_inst_arg rdf:type <https://nobias-project.eu/ObsvAtomInstArgument> .
+    ?obs_inst_arg <https://nobias-project.eu/hasArgument> ?pub_arg_instance .
+    ?obs_inst_arg <https://nobias-project.eu/position> "2" .
+    ?pub_arg_instance <https://nobias-project.eu/inst_arg_name> ?PublisherID
+    FILTER regex(?news_pub_name, "NEWSPUB", "i") .
+    # Getting NewsID
+    ?obs_inst_arg2 <https://nobias-project.eu/hasAtom> ?news_pub_atom .
+    ?obs_inst_arg2 rdf:type <https://nobias-project.eu/ObsvAtomInstArgument> .
+    ?obs_inst_arg2 <https://nobias-project.eu/hasArgument> ?news_arg_instance .
+    ?obs_inst_arg2 <https://nobias-project.eu/position> "1" .
+    ?news_arg_instance <https://nobias-project.eu/inst_arg_name> ?NewsID .
+    
+    ?s rdf:type <https://nobias-project.eu/Publisher> ;
+   		<https://nobias-project.eu/sourceName> ?publisherURL .
+    ?pub_arg_instance <https://nobias-project.eu/originatesFrom> ?s .
+    ?RvaAtomInst a <https://nobias-project.eu/RandomAtomInstArgument> .
+    ?RvaAtomInst <https://nobias-project.eu/hasArgument> ?pub_arg_instance .
+    ?RvaAtomInst <https://nobias-project.eu/hasAtom> ?relatedRVA .
+    ?ObsAtomInst a <https://nobias-project.eu/ObsvAtomInstArgument> .
+    ?ObsAtomInst <https://nobias-project.eu/hasArgument> ?pub_arg_instance .
+    ?ObsAtomInst <https://nobias-project.eu/hasAtom> ?relatedOBS .
+    ?relatedRVA <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom4> .
+    ?relatedRVA <https://nobias-project.eu/value> ?inferredCredibility .
+    ?relatedOBS <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom7> .
+    ?relatedOBS <https://nobias-project.eu/value> ?MBFCCredibility .
+}
+GROUP BY ?PublisherID ?publisherURL ?inferredCredibility ?MBFCCredibility
+ORDER BY DESC (?newsDiversityPerPublisher)
