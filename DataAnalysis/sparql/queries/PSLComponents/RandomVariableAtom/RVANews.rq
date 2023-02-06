@@ -5,6 +5,6 @@ WHERE {
 ?rva rdf:type base:RandomVariableAtom ;
    base:rva_name ?name ;
    base:value ?value ;
-   base:hasCredibilityClass ?credibility ;
+   base:hasCredibilityClass ?credibility .
 FILTER regex(?name, "FAKENEWS", "i") .
 } 
