@@ -1,0 +1,121 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+  
+<GroundRule>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/groundrules.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/GroundRule/{id}";
+  rr:class nobias:GroundRule
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:instantiatesFrom;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/Rule/{grounded_from}";
+	]
+  ];  
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:dnfForm;
+	  rr:objectMap [
+		  rml:reference "dnfForm"
+	  ]
+  ]; 
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasFold;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/CVFold/{fold_id}";
+	]
+  ];  
+  
+    
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasTerm;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/MaxTerm/{derives}";
+	  ]
+  ].
+  
+<GroundRuleGroundAtom1>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_groundatoms_obs.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/GroundRuleGroundAtom/{RuleID}_{Atom_id}";
+  rr:class nobias:GroundRuleGroundAtom
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:hasGroundRule;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/GroundRule/{RuleID}";
+	]
+  ];  
+    
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasGroundAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/ObservedAtom/{Atom_id}";
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:negated;
+	  rr:objectMap [
+		  rml:reference "Negated"
+	  ]
+  ]. 
+  
+<GroundRuleGroundAtom2>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_groundatoms_rva.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/GroundRuleGroundAtom/{RuleID}_{Atom_id}";
+  rr:class nobias:GroundRuleGroundAtom
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:hasGroundRule;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/GroundRule/{RuleID}";
+	]
+  ];  
+    
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasGroundAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/RandomVariableAtom/{Atom_id}";
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:negated;
+	  rr:objectMap [
+		  rml:reference "Negated"
+	  ]
+  ]. 
+  
