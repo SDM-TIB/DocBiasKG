@@ -1,0 +1,46 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+    
+<Iteration>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Iteration/{id}";
+  rr:class nobias:Iteration
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:iterationNumber;
+	  rr:objectMap [
+		  rml:reference "iteration_number"
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasFold;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/CVFold/{fold_id}";
+	]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:objective;
+	  rr:objectMap [
+		  rml:reference "objective"
+	  ]
+  ].
+  
+

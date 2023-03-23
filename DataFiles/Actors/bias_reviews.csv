@@ -2,7 +2,7 @@ id,publisherID,ratingLabel,ratingValue,factcheckID
 BiasReview1,Publisher1,extreme right bias,3,FactcheckResource1
 BiasReview2,Publisher4,extreme right bias,3,FactcheckResource1
 BiasReview3,Publisher29,extreme left bias,-3,FactcheckResource1
-BiasReview4,Publisher37,extreme right bias, fake news,3,FactcheckResource1
+BiasReview4,Publisher37,extreme right bias,3,FactcheckResource1
 BiasReview5,Publisher8,right bias,2,FactcheckResource1
 BiasReview6,Publisher9,left biased,-2,FactcheckResource1
 BiasReview7,Publisher41,right bias,2,FactcheckResource1
