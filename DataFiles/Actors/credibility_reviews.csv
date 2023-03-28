@@ -1,42 +1,42 @@
 id,publisherID,ratingLabel,ratingValue,factcheckID
-CredReview1,Publisher1,not credible,0.0,FactcheckResource1
-CredReview2,Publisher4,not credible,0.0,FactcheckResource1
-CredReview3,Publisher29,not always credible or reliable,0.5,FactcheckResource1
-CredReview4,Publisher33,biased,0.0,FactcheckResource1
-CredReview5,Publisher37,biased,0.0,FactcheckResource1
-CredReview6,Publisher8,fake news,0.0,FactcheckResource1
-CredReview7,Publisher9,mostly credible and reliable,0.75,FactcheckResource1
-CredReview8,Publisher41,fake news,0.0,FactcheckResource1
-CredReview9,Publisher10,fake news,0.0,FactcheckResource1
-CredReview10,Publisher11,biased,0.0,FactcheckResource1
-CredReview11,Publisher43,satire,0.0,FactcheckResource1
-CredReview12,Publisher44,not always credible,0.5,FactcheckResource1
-CredReview13,Publisher46,fake news,0.0,FactcheckResource1
-CredReview14,Publisher12,fake news,0.0,FactcheckResource1
-CredReview15,Publisher48,fake news,0.0,FactcheckResource1
-CredReview16,Publisher55,not always credible,0.5,FactcheckResource1
-CredReview17,Publisher60,biased,0.0,FactcheckResource1
-CredReview18,Publisher65,fake news,0.0,FactcheckResource1
-CredReview19,Publisher66,satire,0.0,FactcheckResource1
-CredReview20,Publisher19,credible,1.0,FactcheckResource1
-CredReview21,Publisher73,satire,0.0,FactcheckResource1
-CredReview22,Publisher14,credible,1.0,FactcheckResource1
-CredReview23,Publisher54,satire,0.0,FactcheckResource1
-CredReview24,Publisher78,satire,0.0,FactcheckResource1
-CredReview25,Publisher86,satire,0.0,FactcheckResource1
-CredReview26,Publisher96,not always credible,0.5,FactcheckResource1
-CredReview27,Publisher104,not always credible,0.5,FactcheckResource1
-CredReview28,Publisher49,not always credible,0.5,FactcheckResource1
-CredReview29,Publisher25,credible,1.00,FactcheckResource1
-CredReview30,Publisher83,satire,0.0,FactcheckResource1
-CredReview31,Publisher89,satire,0.0,FactcheckResource1
-CredReview32,Publisher24,fake news,0.0,FactcheckResource1
-CredReview33,Publisher97,satire,0.0,FactcheckResource1
-CredReview34,Publisher99,satire,0.0,FactcheckResource1
-CredReview35,Publisher39,mostly credible and reliable,0.75,FactcheckResource1
-CredReview36,Publisher47,satire,0.0,FactcheckResource1
-CredReview37,Publisher50,biased,0.0,FactcheckResource1
-CredReview38,Publisher61,pseudoscience,0.0,FactcheckResource1
-CredReview39,Publisher18,not always credible,0.5,FactcheckResource1
-CredReview40,Publisher23,not always credible,0.5,FactcheckResource1
-CredReview41,Publisher88,credible,1.00,FactcheckResource1
+CredReview1,Publisher1,not credible,0,FactcheckResource1
+CredReview2,Publisher4,not credible,0,FactcheckResource1
+CredReview3,Publisher29,not always credible or reliable,2,FactcheckResource1
+CredReview4,Publisher33,biased,0,FactcheckResource1
+CredReview5,Publisher37,biased,0,FactcheckResource1
+CredReview6,Publisher8,fake news,0,FactcheckResource1
+CredReview7,Publisher9,mostly credible and reliable,3,FactcheckResource1
+CredReview8,Publisher41,fake news,0,FactcheckResource1
+CredReview9,Publisher10,fake news,0,FactcheckResource1
+CredReview10,Publisher11,biased,0,FactcheckResource1
+CredReview11,Publisher42,satire,0,FactcheckResource1
+CredReview12,Publisher43,not always credible,2,FactcheckResource1
+CredReview13,Publisher45,fake news,0,FactcheckResource1
+CredReview14,Publisher12,fake news,0,FactcheckResource1
+CredReview15,Publisher47,fake news,0,FactcheckResource1
+CredReview16,Publisher53,not always credible,2,FactcheckResource1
+CredReview17,Publisher58,biased,0,FactcheckResource1
+CredReview18,Publisher63,fake news,0,FactcheckResource1
+CredReview19,Publisher64,satire,0,FactcheckResource1
+CredReview20,Publisher19,credible,4,FactcheckResource1
+CredReview21,Publisher71,satire,0,FactcheckResource1
+CredReview22,Publisher14,credible,4,FactcheckResource1
+CredReview23,Publisher52,satire,0,FactcheckResource1
+CredReview24,Publisher76,satire,0,FactcheckResource1
+CredReview25,Publisher84,satire,0,FactcheckResource1
+CredReview26,Publisher93,not always credible,2,FactcheckResource1
+CredReview27,Publisher100,not always credible,2,FactcheckResource1
+CredReview28,Publisher48,not always credible,2,FactcheckResource1
+CredReview29,Publisher25,credible,4,FactcheckResource1
+CredReview30,Publisher81,satire,0,FactcheckResource1
+CredReview31,Publisher87,satire,0,FactcheckResource1
+CredReview32,Publisher24,fake news,0,FactcheckResource1
+CredReview33,Publisher94,satire,0,FactcheckResource1
+CredReview34,Publisher96,satire,0,FactcheckResource1
+CredReview35,Publisher39,mostly credible and reliable,3,FactcheckResource1
+CredReview36,Publisher46,satire,0,FactcheckResource1
+CredReview37,Publisher49,biased,0,FactcheckResource1
+CredReview38,Publisher59,pseudoscience,0,FactcheckResource1
+CredReview39,Publisher18,not always credible,2,FactcheckResource1
+CredReview40,Publisher23,not always credible,2,FactcheckResource1
+CredReview41,Publisher86,credible,4,FactcheckResource1
