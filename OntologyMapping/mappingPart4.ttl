@@ -1,0 +1,169 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+    
+<InstantiatedArguments>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/instantiated_args.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/InstantiatedArgument/{id}";
+  rr:class nobias:InstantiatedArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:inst_arg_name;
+	  rr:objectMap [
+		  rml:reference "name"
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:instantiatesFrom;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/Argument/{instantiated_from}";
+	]
+  ].
+
+<InstantiatedArgumentsPublisher>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgPublisher.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/InstantiatedArgument/{InstArgID}";
+  rr:class nobias:InstantiatedArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:originatesFrom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Publisher/{PublisherID}";
+	]
+  ].
+  
+<InstantiatedArgumentsNews>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgNews.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/InstantiatedArgument/{InstArgID}";
+  rr:class nobias:InstantiatedArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:originatesFrom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/News/{NewsID}";
+	]
+  ].
+  
+
+<InstantiatedArgumentsUser>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgUser.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/InstantiatedArgument/{InstArgID}";
+  rr:class nobias:InstantiatedArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:originatesFrom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{UserID}";
+	]
+  ].
+
+  
+<InstantiatedArgumentsObsVar>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_instantiated_args_obs.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/ObsvAtomInstArgument/{AtomID}_{Argument}_{Position}";
+  rr:class nobias:ObsvAtomInstArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/ObservedAtom/{AtomID}";
+	]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:hasArgument;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/InstantiatedArgument/{Argument}";
+	]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:position;
+	 rr:objectMap [
+		  rml:reference "Position"
+	  ]
+  ].
+  
+  
+<InstantiatedArgumentsRVA>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_instantiated_args_rva.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/RandomAtomInstArgument/{AtomID}_{Argument}_{Position}";
+  rr:class nobias:RandomAtomInstArgument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/RandomVariableAtom/{AtomID}";
+	]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:hasArgument;
+	 rr:objectMap [
+		  rr:template "https://nobias-project.eu/InstantiatedArgument/{Argument}";
+	]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:position;
+	 rr:objectMap [
+		  rml:reference "Position"
+	  ]
+  ].
+  
