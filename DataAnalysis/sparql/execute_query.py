@@ -6,8 +6,9 @@ import os, ast
 
 def execute_SPARQL_query(file_path, writeResult=True):
     sparql = SPARQLWrapper(
-        "https://labs.tib.eu/sdm/nobias1/sparql"
+        "https://labs.tib.eu/sdm/graphdb/repositories/PSL_classification_process"
     )
+    sparql.setCredentials("sawischa","S@wischa")
     sparql.setReturnFormat(CSV)
 
     query = ""
