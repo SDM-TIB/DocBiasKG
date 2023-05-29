@@ -1,8 +1,0 @@
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX base: <https://nobias-project.eu/>
-
-SELECT (COUNT(DISTINCT ?s) AS ?UserCount) WHERE {
-  ?s rdf:type base:RandomVariableAtom;
-    base:rva_name ?name.
-  FILTER(REGEX(?name, "USERCREDLAT", "i"))
-}

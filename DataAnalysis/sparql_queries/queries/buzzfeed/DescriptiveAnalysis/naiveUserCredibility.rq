@@ -1,0 +1,10 @@
+# Users and their naive credibility (based on credibility of news they share)
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select ?user (AVG(xsd:float(?groundTruth)) as ?naiveUserCred) where { 
+	?sharingBehavior a <https://nobias-project.eu/SharingBehavior> .
+    ?sharingBehavior <https://nobias-project.eu/News> ?news .
+    ?news <https://nobias-project.eu/hasGroundTruth> ?groundTruth .
+    ?sharingBehavior <https://nobias-project.eu/SocialMediaUser> ?user .
+    FILTER regex(xsd:string(?news), "Buzzfeed", "i") .
+}  
+GROUP BY ?user

@@ -1,0 +1,33 @@
+# Dataset information count
+SELECT ?dataset ?metaInformation (COUNT(*) AS ?entityInformationCount) (?entityInformationCount + ?metaInformation AS ?totalInformationCount) { 
+    {
+      SELECT ?dataset (COUNT(*) AS ?metaInformation) WHERE {
+            ?dataset a <http://www.w3.org/ns/dcat#Dataset> .
+            ?dataset ?r ?metaInformation .
+            FILTER(?r != <https://nobias-project.eu/composedOf>) .
+            FILTER (!isBlank(?metaInformation)) .
+    	} 
+    	GROUP BY ?dataset  
+    }
+    
+    {
+        ?entity <https://nobias-project.eu/associatedTo> ?dataset .
+        ?entity <https://nobias-project.eu/hasDocumentationType> <https://nobias-project.eu/DatasetDocumentation> .
+        ?entity ?r ?t .
+        FILTER (!isBlank(?t)) .
+    }
+    UNION
+    {
+        ?entity <https://nobias-project.eu/associatedTo> ?dataset .
+        ?entity <https://nobias-project.eu/hasDocumentationType> <https://nobias-project.eu/DatasetDocumentation> .
+        ?h ?r ?entity .
+        FILTER (!isBlank(?h)) .
+        # Filter bias info
+        FILTER NOT EXISTS { ?h <https://nobias-project.eu/hasDocumentationType> <https://nobias-project.eu/BiasDocumentation> } .
+    }
+    
+} 
+GROUP BY ?dataset ?metaInformation
+
+
+

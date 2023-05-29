@@ -1,0 +1,34 @@
+select ?news ?relatedAtom ?dataset (COUNT(*) AS ?informationCount) where { 
+    {
+    SELECT ?news ?relatedAtom ?dataset WHERE {
+            ?news a <https://nobias-project.eu/News> .
+    		?news <https://nobias-project.eu/associatedTo> ?dataset .
+            ?instArg <https://nobias-project.eu/originatesFrom> ?news .
+            ?atomInst <https://nobias-project.eu/hasArgument> ?instArg .
+            ?atomInst <https://nobias-project.eu/hasAtom> ?relatedAtom .
+            ?relatedAtom <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom2> .
+        }
+    }
+    {
+        ?news ?r ?t .
+        FILTER (!isBlank(?t))
+    }
+    UNION
+    {
+        ?h ?r ?news .
+        FILTER (!isBlank(?h))
+    }
+    UNION
+    {
+        ?h ?r ?relatedAtom .
+        FILTER (!isBlank(?h))
+    }
+    UNION
+    {
+        ?relatedAtom ?r ?t .
+        FILTER (!isBlank(?t))
+    }
+    
+	
+} 
+GROUP BY ?news ?relatedAtom ?dataset

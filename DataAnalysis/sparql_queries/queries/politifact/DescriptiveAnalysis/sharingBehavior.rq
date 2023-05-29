@@ -1,0 +1,13 @@
+# Every SharingBehavior and the times a news has been shared by a user
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?sharingBehavior ?sharedNews ?newsTitle ?sharingUser ?timesShared
+WHERE {
+?sharingBehavior rdf:type <https://nobias-project.eu/SharingBehavior> .
+?sharingBehavior <https://nobias-project.eu/News> ?sharedNews .
+?sharingBehavior <https://nobias-project.eu/SocialMediaUser> ?sharingUser .
+?sharingBehavior <https://nobias-project.eu/timesShared> ?timesShared .
+?sharedNews <https://nobias-project.eu/hasNewsTitle> ?newsTitle .
+FILTER regex(xsd:string(?sharedNews), "Politifact", "i") .
+} 

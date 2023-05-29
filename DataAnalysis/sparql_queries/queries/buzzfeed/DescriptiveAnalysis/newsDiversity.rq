@@ -1,0 +1,6 @@
+# News diversity for each publisher (No of unique news)
+select ?publisher (COUNT(*) as ?newsDiversity) where { 
+        ?publisher <https://nobias-project.eu/publishes> ?news .
+        ?news <https://nobias-project.eu/associatedTo> <https://nobias-project.eu/Dataset/Data1> .
+	} 
+GROUP BY ?publisher
