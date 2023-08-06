@@ -1,0 +1,231 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+<RuleMapping>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rules.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+ 
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Rule/{id}";
+  rr:class nobias:Rule
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/EvaluationProcedure/{FoldID}";
+	]
+  ];
+  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasWeight;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/Weight/{id}_{FoldID}_{weight}";
+	]
+  ].
+
+
+<Weight>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rules.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+ 
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Weight/{id}_{FoldID}_{weight}";
+  rr:class nobias:Weight
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/EvaluationProcedure/{FoldID}";
+	]
+  ];
+  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasRule;
+	  rr:objectMap [
+          rr:template "https://nobias-project.eu/Rule/{id}";
+	]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:weight;
+	  rr:objectMap [
+		  rml:reference "weight"
+	  ]
+  ].
+
+
+  
+<Atoms>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/atoms.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Atom/{id}";
+  rr:class nobias:Atom
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:atom_name;
+	  rr:objectMap [
+		  rml:reference "name"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasPredicate;
+	  rr:objectMap [
+		rr:parentTriplesMap <Predicates> ;
+		rr:joinCondition [
+		  rr:child "belongs_to";
+		  rr:parent "id"
+	  ]
+	]
+  ].
+  
+<AtomsArgs>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_args.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/AtomArgument/{atom_id}_{arg_id}_{position}";
+  rr:class nobias:AtomArgument
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:position;
+	  rr:objectMap [
+		  rml:reference "position"
+	  ]
+  ]; 
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasArgument;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Argument/{arg_id}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Atom/{atom_id}";
+	  ]
+  ].
+
+<Predicates>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/predicates.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Predicate/{id}";
+  rr:class nobias:Predicate
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:predicate_name;
+	  rr:objectMap [
+		  rml:reference "name"
+	  ]
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:arity;
+	  rr:objectMap [
+		  rml:reference "arity"
+	  ]
+  ]. 
+
+<Arguments>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/args.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Argument/{id}";
+  rr:class nobias:Argument
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:arg_name;
+	  rr:objectMap [
+		  rml:reference "name"
+	  ]
+  ].
+  
+  
+<RuleAtom>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_atoms.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/RuleAtom/{RuleID}_{AtomID}_{Pos}";
+  rr:class nobias:RuleAtom
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasRule;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Rule/{RuleID}";
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Atom/{AtomID}";
+	  ]
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:position;
+	  rr:objectMap [
+		  rml:reference "Pos"
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:negated;
+	  rr:objectMap [
+		  rml:reference "Negated"
+	  ]
+  ].  
+  

@@ -1,0 +1,52 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+    
+<IterationRVA>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/mapsRVA.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/IterationRVA/{iter_id}_{rva_id}_{Dataset}_{value}";
+  rr:class nobias:IterationRVA
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasIteration;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Iteration/{iter_id}";
+	]
+  ];
+      
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasAtom;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/RandomVariableAtom/{rva_id}_{Dataset}";
+	]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasDataset;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Dataset/{Dataset}";
+	  ]
+  ];
+    
+  rr:predicateObjectMap [
+	 rr:predicate nobias:currentValue;
+	 rr:objectMap [
+		  rml:reference "value"
+	  ]
+  ].
+  

@@ -1,0 +1,219 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+
+<SocialInteraction1>
+  a rr:TriplesMap;
+  
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/buzz_interactions_map.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/SocialInteraction/{interaction}-{userA}-{userB}";
+  rr:class nobias:SocialInteraction
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userA}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userB}";
+	  ]
+  ];
+
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:overlappingGTValue;
+	  rr:objectMap [
+		  rml:reference "overlapGroundTruth"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:similarityThreshold;
+    rr:objectMap [ rr:constant "0.75"; ]
+  ];
+
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:overlapGTLabel;
+	  rr:objectMap [
+		  rml:reference "OverlapLabel"
+	  ]
+  ].
+
+<SocialInteraction2>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/poli_interactions_map.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/SocialInteraction/{interaction}-{userA}-{userB}";
+  rr:class nobias:SocialInteraction
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userA}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userB}";
+	  ]
+  ];
+
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:overlappingGTValue;
+	  rr:objectMap [
+		  rml:reference "overlapGroundTruth"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:similarityThreshold;
+    rr:objectMap [ rr:constant "0.75"; ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:overlapGTLabel;
+	  rr:objectMap [
+		  rml:reference "OverlapLabel"
+	  ]
+  ].
+
+  
+<OverlapMeasure1>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/buzz_overlap_map.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/MeasuresBiasIn/OverlapAnalysis5-{userA}-{userB}";
+  rr:class nobias:MeasuresBiasIn
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:measuresBiasInUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userA}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:measuresBiasInUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userB}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:metricMeasuresBiasBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/BiasDetectionMethod/OverlapAnalysis";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:biasScore;
+	  rr:objectMap [
+		  rml:reference "jaccardScore"
+	  ]
+  ];
+
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:threshold;
+    rr:objectMap [ rr:constant "3"; ]
+  ].
+  
+<OverlapMeasure2>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/poli_overlap_map.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/MeasuresBiasIn/OverlapAnalysis6-{userA}-{userB}";
+  rr:class nobias:MeasuresBiasIn
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:measuresBiasInUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userA}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:measuresBiasInUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{userB}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:metricMeasuresBiasBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/BiasDetectionMethod/OverlapAnalysis";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:biasScore;
+	  rr:objectMap [
+		  rml:reference "jaccardScore"
+	  ]
+  ];
+
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:threshold;
+    rr:objectMap [ rr:constant "3"; ]
+  ].
+  
+  
+<BiasMeasureOverlapMapping>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/poli_overlap_map.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/BiasDetectionMethod/OverlapAnalysis";
+  rr:class nobias:BiasDetectionMethod
+  ].
+
+
+  

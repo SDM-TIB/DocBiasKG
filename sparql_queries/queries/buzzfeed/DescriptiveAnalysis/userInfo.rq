@@ -1,0 +1,14 @@
+# All users and their related RVAs + inferred credibilities
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?s ?socialMediaURL ?relatedAtom ?inferredCredibility
+WHERE {
+?s rdf:type <https://nobias-project.eu/SocialMediaUser> ;
+   <https://nobias-project.eu/hasSocialMediaUrl> ?socialMediaURL.
+?instArg <https://nobias-project.eu/originatesFrom> ?s .
+?AtomInst <https://nobias-project.eu/hasArgument> ?instArg .
+?AtomInst <https://nobias-project.eu/hasAtom> ?relatedAtom .
+?relatedAtom <https://nobias-project.eu/instantiatesFrom> <https://nobias-project.eu/Atom/Atom5> .
+?relatedAtom <https://nobias-project.eu/value> ?inferredCredibility .
+?relatedAtom <https://nobias-project.eu/hasDataset> <https://nobias-project.eu/Dataset/Data1> ;
+} 

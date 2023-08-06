@@ -1,0 +1,76 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+    
+<RandomVariableAtomsNews>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-news.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/RandomVariableAtom/{AtomID}_{Dataset}";
+  rr:class nobias:RandomVariableAtom
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs;
+	  rr:objectMap [
+        rr:template "https://nobias-project.eu/News/{ID}"
+        ]
+  ].
+
+
+<RandomVariableAtomsUser>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-users.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/RandomVariableAtom/{AtomID}_{Dataset}";
+  rr:class nobias:RandomVariableAtom
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs;
+	  rr:objectMap [
+        rr:template "https://nobias-project.eu/SocialMediaUser/{ID}"
+        ]
+  ].
+
+
+<RandomVariableAtomPublisher>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-publishers.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/RandomVariableAtom/{AtomID}_{Dataset}";
+  rr:class nobias:RandomVariableAtom
+  ];
+  
+  rr:predicateObjectMap [
+    rr:predicate owl:sameAs;
+	  rr:objectMap [
+        rr:template "https://nobias-project.eu/Publisher/{ID}"
+        ]
+  ].
+  
+

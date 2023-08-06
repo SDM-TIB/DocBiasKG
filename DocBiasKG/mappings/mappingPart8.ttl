@@ -1,0 +1,288 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+
+<Model>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/model.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Model/{id}";
+  rr:class mls:Model
+  ];
+  
+    
+  rr:predicateObjectMap [
+	  rr:predicate nobias:modelName;
+	  rr:objectMap [
+		  rml:reference "cred_model"
+	  ]
+  ].
+  
+  
+<Fold>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/folds.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/EvaluationProcedure/{id}";
+  rr:class mls:EvaluationProcedure
+  ];
+  
+    
+  rr:predicateObjectMap [
+	  rr:predicate nobias:foldNumber;
+	  rr:objectMap [
+		  rml:reference "fold_number"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:dataset;
+	  rr:objectMap [
+		  rml:reference "dataset"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:model;
+	  rr:objectMap [
+		  rml:reference "model"
+	  ]
+  ].
+  
+
+ 
+<Performance1>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/performances.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/EvaluationMeasure/{id}_Accuracy";
+  rr:class mls:EvaluationMeasure
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:accuracy;
+	  rr:objectMap [
+		  rml:reference "Accuracy"
+	  ]
+  ].
+  
+
+<Performance2>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/performances.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/EvaluationMeasure/{id}_F1";
+  rr:class mls:EvaluationMeasure
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:f1Score;
+	  rr:objectMap [
+		  rml:reference "F1"
+	  ]
+  ].
+  
+
+
+<MappingModelEvaluation>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/ModelEvaluation/{performance_id}";
+  rr:class mls:ModelEvaluation
+  ];
+
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:specifiedBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationMeasure/{fold_id}";
+	  ]
+  ].
+
+
+<EvalSpec>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/EvaluationSpecification/{fold_id}_{performance_id}_Accuracy_{id}";
+  rr:class mls:EvaluationSpecification
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationProcedure/{fold_id}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:specifiedBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Iteration/{id}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationMeasure/{performance_id}_Accuracy";
+	  ]
+  ].
+
+
+<EvalSpec2>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/EvaluationSpecification/{fold_id}_{performance_id}_F1_{id}";
+  rr:class mls:EvaluationSpecification
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationProcedure/{fold_id}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:specifiedBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Iteration/{id}";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasPart;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationMeasure/{performance_id}_F1";
+	  ]
+  ].
+
+  
+<Run>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Run/{id}_{Dataset}_{Model}_{performance_id}";
+  rr:class mls:Run
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasInput;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Dataset/{Dataset}";
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasOutput;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Model/{Model}";
+	  ]
+  ];
+
+   rr:predicateObjectMap [
+	  rr:predicate mls:achieves;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Iteration/{id}";
+	  ]
+  ];   
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:hasOutput;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/ModelEvaluation/{performance_id}";
+	  ]
+  ].
+  
+<Task>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/Iteration/{id}";
+  rr:class nobias:Iteration
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate mls:defines;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationSpecification/{fold_id}_{performance_id}_F1";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate mls:defines;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/EvaluationSpecification/{fold_id}_{performance_id}_Accuracy";
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:iterationNumber;
+	  rr:objectMap [
+		  rml:reference "iteration_number"
+	  ]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:objective;
+	  rr:objectMap [
+		  rml:reference "objective"
+	  ]
+  ].

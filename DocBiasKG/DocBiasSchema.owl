@@ -1,0 +1,3021 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://nobias-project.eu/"
+     xml:base="https://nobias-project.eu/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:opla-sd="http://ontologydesignpatterns.org/opla-sd#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:cpannotationschema="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"
+     xmlns:AnnotationVocabulary="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
+    <owl:Ontology rdf:about="https://nobias-project.eu/">
+        <dc:contributor>Maria-Esther Vidal</dc:contributor>
+        <dc:contributor>Mayra Russo</dc:contributor>
+        <dc:contributor>Sammy Sawischa</dc:contributor>
+        <dc:contributor>Yukti Sharma</dc:contributor>
+        <dc:creator xml:lang="en">Mayra Russo</dc:creator>
+        <dc:creator>NoBIAS project</dc:creator>
+        <dc:description>DocBias, an ontology to document Machine Learning pipelines</dc:description>
+        <dc:title xml:lang="en">Doc-Bias Ontology</dc:title>
+        <terms:created>2022-06-10</terms:created>
+        <terms:language>en</terms:language>
+        <terms:license xml:lang="en">GNU General Public License v3.0</terms:license>
+        <terms:publisher>TIB – Leibniz Information Centre for Science and Technology, Hannover, Germany</terms:publisher>
+        <owl:versionInfo xml:lang="en">0.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPosition -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPosition"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionX -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionX"/>
+    
+
+
+    <!-- http://ontologydesignpatterns.org/opla-sd#entityPositionY -->
+
+    <owl:AnnotationProperty rdf:about="http://ontologydesignpatterns.org/opla-sd#entityPositionY"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/citation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/citation">
+        <dc:identifier xml:lang="en">citation</dc:identifier>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <rdfs:comment xml:lang="en">Mayra Russo</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/language -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/language">
+        <rdfs:range rdf:resource="http://purl.org/dc/terms/LinguisticSystem"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher">
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#coversRequirements">
+        <rdfs:comment>This annotation property is used for exemplifying possible requirements the content pattern provides a solution for. Requirements are expressed as natural language competency questions.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#extractedFrom">
+        <rdfs:comment>This annotation property should be assigned with a URI, which points to the possible reference ontology which the annotated pattern was extracted from (i.e. the reference ontology that the ontology elements have been deeply or partially cloned by). The range is not explicit in the definition of the annotation property because it would turn the ontology to OWL Full. E.g. The participation pattern is extracted from the Dolce Ultra Lite ontology, hence the value for this annotation property is http://www.ontologydesignpatterns.org/ont/dul/DUL.owl</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasComponent">
+        <rdfs:comment>This annotation property is useful for content ontology design patterns. Its value is a URI, which refers to another content ontology design pattern which is a component of the annotated one.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasConsequences">
+        <rdfs:comment>This annotation property is used for briefly describing the benefits and/or possible trade-offs when using the CP.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasIntent">
+        <rdfs:comment>This annotation property is used in order to describe the intent of the content pattern.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#hasUnitTest">
+        <rdfs:comment>This property can be used to annotate a unit test (e.g. in the form of a SPARQL query) to be launched to evaluate an ontology against a requirement-based task.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isCloneOf">
+        <rdfs:comment>This annotation property is used for referring a cloned ontology entity to its cloning source.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#isSpecializationOf">
+        <rdfs:comment>This annotation property is useful for content ontology design patterns and its elements. Its value is a URI, which refers either to a content ontology design pattern that is specialized by the annotated one, or to an ontology element that is specialized by the annotated one.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#reengineeredFrom">
+        <rdfs:comment>This annotation property should be assigned with a URI, which points to the concept schema, page, or anything else from which the annotated pattern was reengineered.  If the source does not have any URI e.g., a printed book, this property value should provide information as precise as possible in order to identify the source. This property is alternative to the extractedFrom property because it is used when the pattern come from a concept schema which is not an owl ontology. For example content ontology design patterns, which are reengineered from data model patterns, rdf schemas, etc. should be annotatd with this property. E.g. The basicpersonalfoaf pattern is extracted from the rdf FOAF specification, hence the value for this annotation property is http://xmlns.com/foaf/spec/20071002.rdf</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#relatedCPs">
+        <rdfs:comment>This annotation property can be used to indicate other CPs (if any) that specialize, generalize, inlcude, or are components of the CP. Furthermore, this field may indicate other CPs that are typically used in conjunction with the described one. Important similarities and differences with other patterns can be also described here.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#scenarios">
+        <rdfs:comment>This annotation property is used for describing examples of instantiation of the Content OP. For example, for the part-of Content OP (which represents part-whole relations) a possible scenario is the sentence: &quot;the brain is part of the human body&quot;. Scenarios are expressed as natural language sentences.</rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#type -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/Creator -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/Creator">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:comment>defines creator of the Dataset</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#theme -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dcat#theme">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:comment xml:lang="en">A main category of the resource. A resource can have multiple themes.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#computedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#computedOn">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#QualityMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>defines measure of metric which is computed on dataset</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#hasQualityAnnotation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#hasQualityAnnotation">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dqv#QualityAnnotation"/>
+        <rdfs:comment>defines annotations related to quality that Dataset has</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#inCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#inCategory">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dqv#Category"/>
+        <rdfs:comment>defines Category that given Dimension belongs to</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#inDimension -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#inDimension">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#Metric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dqv#Dimension"/>
+        <rdfs:comment>defines Dimension who has given Metric</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#isMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/dqv#isMeasurementOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#QualityMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dqv#Metric"/>
+        <rdfs:comment xml:lang="en">defines metric which is measured</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#achieves -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#achieves">
+        <rdfs:label xml:lang="en">achieves</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#definedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#definedOn">
+        <rdfs:label xml:lang="en">definedOn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#defines -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#defines">
+        <rdfs:label xml:lang="en">defines</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#executes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#executes">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Run"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/ClassificationFramework"/>
+        <rdfs:label xml:lang="en">executes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#hasInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#hasInput">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Run"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">hasInput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#hasPart">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Weight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasPart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#implements -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#implements">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ClassificationFramework"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+        <rdfs:label xml:lang="en">implements</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#realizes">
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#specifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/mls#specifiedBy">
+        <rdfs:comment xml:lang="en">A relation between an entity and the information content entity that specifies it.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">http://ml-schema.github.io/documentation/ML%20Schema.html#d4e227</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">specifiedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/odrl/2/target -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/odrl/2/target">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#QualityPolicy"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>defines dataset for which a quality policy is applicable for</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/associatedTo -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/associatedTo">
+        <owl:inverseOf rdf:resource="https://nobias-project.eu/composedOf"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">associatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/checkedBy -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/checkedBy">
+        <owl:inverseOf rdf:resource="https://nobias-project.eu/checks"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+        <rdfs:label xml:lang="en">checkedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/checks -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/checks">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:comment xml:lang="en">defines relationship between fact checking resourceand the news publisher.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/composedOf -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/composedOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/comprisedOf -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/comprisedOf">
+        <rdfs:label xml:lang="en">comprisedOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/follows -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/follows">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:comment>defines SocialMediaUser following another  SocialMediaUser</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/grRule_disconjuncts_grAtom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/grRule_disconjuncts_grAtom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <rdfs:label xml:lang="en">grRule_disconjuncts_grAtom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasArgument -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasArgument">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObsvAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomAtomInstArgument"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Argument"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:label xml:lang="en">hasArgument</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasArquitecture -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasArquitecture">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/TechniqueArquitecture"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasArquitecture</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasAtom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasAtom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/AtomArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationRVA"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObsvAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RuleAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/TermRandomVariableAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/ObservedAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:label xml:lang="en">hasAtom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasBiasType -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasBiasType">
+        <rdfs:label xml:lang="en">hasBiasType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasDataset -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasDataset">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRuleGroundAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationRVA"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationTerm"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObservedAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObsvAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">hasDataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasDocumentationType -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasDocumentationType">
+        <rdfs:range rdf:resource="https://nobias-project.eu/DocumentationType"/>
+        <rdfs:label xml:lang="en">hasDocumentationType</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasFramework -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasFramework">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/ClassificationFramework"/>
+        <dc:creator xml:lang="en">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasFramework</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasGroundAtom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasGroundAtom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRuleGroundAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasGroundAtom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasGroundRule -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasGroundRule">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRuleGroundAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasGroundRule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasIteration -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasIteration">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationRVA"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationTerm"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Iteration"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasIteration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasModelComponent -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasModelComponent">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="https://www.openriskmanual.org/ns/doam#Model_Components"/>
+        <rdfs:label xml:lang="en">hasModelComponent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasNews -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasNews">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SharingBehavior"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:label xml:lang="en">hasNews</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasOutput -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasOutput">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Run"/>
+        <rdfs:label xml:lang="en">hasOutput</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasPredicate -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasPredicate">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Predicate"/>
+        <rdfs:label xml:lang="en">hasPredicate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasRule -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasRule">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RuleAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Weight"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:label xml:lang="en">hasRule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasRuleAtom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasRuleAtom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/RuleAtom"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasRuleAtom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasSource -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasSource">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:comment xml:lang="en">defines News Source for a News</rdfs:comment>
+        <rdfs:label xml:lang="en">hasSource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasTerm -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasTerm">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationTerm"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/TermRandomVariableAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">hasTerm</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasTrainingProcess -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasTrainingProcess">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/mls#Process"/>
+        <rdfs:label xml:lang="en">hasTrainingProcess</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasUser -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasUser">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SharingBehavior"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialInteraction"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:label xml:lang="en">hasUser</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasWeight -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/hasWeight">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Weight"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/implements -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/implements"/>
+    
+
+
+    <!-- https://nobias-project.eu/instantiatesFrom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/instantiatesFrom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObservedAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Argument"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:label xml:lang="en">instantiatesFrom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/isOptimizedIn -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/isOptimizedIn">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">isOptimizedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/isPartOf">
+        <rdfs:label xml:lang="en">isPartOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasInDataset -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasInDataset">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">measuresBiasInDataset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasInFact -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasInFact">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+        <rdfs:label xml:lang="en">measuresBiasInFactCheck</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasInNews -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasInNews">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:label xml:lang="en">measuresBiasInNews</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasInRVA -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasInRVA">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:label xml:lang="en">measuresBiasInRVA</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasinPublisher -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasinPublisher">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:label xml:lang="en">measuresBiasinPublisher</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/measuresBiasinUser -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/measuresBiasinUser">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:label xml:lang="en">measuresBiasinUser</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/metricMeasuresBiasBy -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/metricMeasuresBiasBy">
+        <owl:inverseOf rdf:resource="https://nobias-project.eu/metricMeasuresBiasIn"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/BiasDetectionMethod"/>
+        <rdfs:label xml:lang="en">metricMeasuresBiasBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/metricMeasuresBiasIn -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/metricMeasuresBiasIn">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/BiasDetectionMethod"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:label xml:lang="en">metricMeasuresBiasIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/minimizes -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/minimizes">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <rdfs:label xml:lang="en">minimizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/optimizesIn -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/optimizesIn">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:label xml:lang="en">optimizesIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/originatesFrom -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/originatesFrom">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:label xml:lang="en">originatesFrom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/preparesData -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/preparesData">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Pre-processing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment>defines files that \\ are used in preparing the Data for training to be used by Model</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/publishedBy -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/publishedBy">
+        <owl:inverseOf rdf:resource="https://nobias-project.eu/publishes"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/Publisher"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">publishedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/publishes -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/publishes">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:comment>defines News published by a News Source</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/sharedBy -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/sharedBy">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/SharingBehavior"/>
+        <rdfs:comment>defines News that is being shared</rdfs:comment>
+        <rdfs:label>sharedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://nobias-project.eu/shares -->
+
+    <owl:ObjectProperty rdf:about="https://nobias-project.eu/shares">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:range rdf:resource="https://nobias-project.eu/SharingBehavior"/>
+        <dc:creator xml:lang="en">russo</dc:creator>
+        <rdfs:comment>defines SocialMediaUser that shares the News</rdfs:comment>
+        <rdfs:label xml:lang="en">shares</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/Issued -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/Issued">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines date on which Dataset is published</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>gives description of dataset</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/modified">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines date on which Dataset is modified</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines title of the Dataset</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Keyword -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#Keyword">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines Keywords describing the Dataset</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#ExpectedDatatype -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dqv#ExpectedDatatype">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#Metric"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines expected datatype of metric</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dqv#value">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dqv#QualityMeasurement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines value of the metric measured</rdfs:comment>
+        <rdfs:label xml:lang="en">qualityValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/arg_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/arg_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Argument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Name of an argument as a String</rdfs:comment>
+        <rdfs:label xml:lang="en">arg_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/arity -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/arity">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Predicate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Number of arguments to a predicate</rdfs:comment>
+        <rdfs:label xml:lang="en">arity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/atom_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/atom_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Atom name</rdfs:comment>
+        <rdfs:label xml:lang="en">atom_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/biasLabel -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/biasLabel">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">biasLabel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/biasScore -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/biasScore">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Represents the bias score calculated with bias detection method</rdfs:comment>
+        <rdfs:label xml:lang="en">biasScore</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/coefficient -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/coefficient">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/TermRandomVariableAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Coefficient of a variable inside a term</rdfs:comment>
+        <rdfs:label xml:lang="en">coefficient</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/constant -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/constant">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The constant part of a max term, e.g. x in max(0, x + RVA1 - RVA2)</rdfs:comment>
+        <rdfs:label xml:lang="en">constant</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/credibilityAssessment -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/credibilityAssessment">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">credibilityAssessment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/credibilityClass -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/credibilityClass">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">Credibility Classification of Random Variable Atom.</rdfs:comment>
+        <rdfs:label xml:lang="en">credibilityClass</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/currentValue -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/currentValue">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationRVA"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/IterationTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">currentValue</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/dataset -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/dataset">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">dataset</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/datasetName -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/datasetName">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">datasetName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/dnfForm -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/dnfForm">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The written groundfule in DNF format</rdfs:comment>
+        <rdfs:label xml:lang="en">dnfForm</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/entityID -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/entityID">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">entityID</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/foldNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/foldNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">foldNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasContentType -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasContentType">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">hasContentType</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasCredibilityClass -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasCredibilityClass">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>defines Credibility Class of News Source given by</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasCredibilityScore -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasCredibilityScore">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>defines Credibility Score of News Source given by Factchecker</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasFactCheckerUrl -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasFactCheckerUrl">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>defines URL of the Fact-checking website or organization</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasGroundTruth -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasGroundTruth">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">represents annotated label</rdfs:comment>
+        <rdfs:label xml:lang="en">hasGroundTruth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasMeasureValue -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasMeasureValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">hssMeasureValue</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasNewsContent -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasNewsContent">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>define News content  in text form</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasNewsName -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasNewsName">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>News Identifier as per original dataset</rdfs:comment>
+        <rdfs:label xml:lang="en">hasNewsName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasNewsTitle -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasNewsTitle">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>defines News Title</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasNewsUrl -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasNewsUrl">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/News"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>defines News URL</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasSocialMediaUrl -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasSocialMediaUrl">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>defines URL of Social Media that a User uses</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/hasValue">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label xml:lang="en">hasValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/incompatibility -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/incompatibility">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MaxTerm"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Incompatibility/Dissatisfaction of a term</rdfs:comment>
+        <rdfs:label xml:lang="en">incompatibility</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/inst_arg_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/inst_arg_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/InstantiatedArgument"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Name of the instantiated argument</rdfs:comment>
+        <rdfs:label xml:lang="en">inst_arg_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/isAvailable -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/isAvailable">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>defines whether dataset is publicly available</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/iterationNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/iterationNumber">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">iterationNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/jaccardValue -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/jaccardValue">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialInteraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">similarityThreshold</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/language -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/language">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/model -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/model">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">model</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/modelName -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/modelName">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#Model"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">modelName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/negated -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/negated">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundRuleGroundAtom"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RuleAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>If true the corresponding atom is negated, e.g. !Atom1</rdfs:comment>
+        <rdfs:label xml:lang="en">negated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/objective -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/objective">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The objective is the total incompatibility of the current iteration</rdfs:comment>
+        <rdfs:label xml:lang="en">objective</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/obsatom_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/obsatom_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObservedAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Name of the observed atom</rdfs:comment>
+        <rdfs:label xml:lang="en">obsatom_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/overlapGTLabel -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/overlapGTLabel">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialInteraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">overlapGTLabel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/overlappingGroundTruth -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/overlappingGroundTruth">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SocialInteraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">overlappingGTValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/periodOftime -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/periodOftime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label rdf:resource="https://nobias-project.eu/periodOfTime"/>
+        <rdfs:seeAlso xml:lang="en">http://purl.org/dc/terms/PeriodOfTime</rdfs:seeAlso>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/position -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/position">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/AtomArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/ObsvAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomAtomInstArgument"/>
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RuleAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Position of an argument in the context of an atom or an atom in the context of a rule.</rdfs:comment>
+        <rdfs:label xml:lang="en">position</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/predicate_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/predicate_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Predicate"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">predicate_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/resourceName -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/resourceName">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">resourceName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/rva_name -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/rva_name">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/RandomVariableAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">rva_name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/similarityCluster -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/similarityCluster">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">similarityCluster</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/sourceName -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/sourceName">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Publisher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">defines name and URL for News Source</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/specificationDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/specificationDescription">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">specificationDescription</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/spontaneity -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/spontaneity">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">defines whether dataset was spontaneously collected from a Social Media Platform or computer-generated</rdfs:comment>
+        <rdfs:label xml:lang="en">spontaneity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/termConstant -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/termConstant">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">termConstant</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/threshold -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/threshold">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/thresholdCount -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/thresholdCount">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">thresholdCount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/timesShared -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/timesShared">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/SharingBehavior"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>defines how many times a news is shared by a given user</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/totalStories -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/totalStories">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>defines total number of news stories in  Dataset</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/value -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/value">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Truth value of a GroundAtom in the range [0,1]</rdfs:comment>
+        <rdfs:label xml:lang="en">value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/valueCount -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/valueCount">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/MeasuresBiasIn"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">valueCount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://nobias-project.eu/weight -->
+
+    <owl:DatatypeProperty rdf:about="https://nobias-project.eu/weight">
+        <rdfs:domain rdf:resource="https://nobias-project.eu/Weight"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>The weight of a rule is later used to give certain terms more or less significance by multiplying it with their incompatibility.</rdfs:comment>
+        <rdfs:label xml:lang="en">weight</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasDetectionMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#Concept -->
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#Concept">
+        <rdfs:comment xml:lang="en">Describes the theme of a dataset.</rdfs:comment>
+        <rdfs:label xml:lang="en">Theme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Catalogue -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Catalogue">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+        <rdfs:comment xml:lang="en">A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/TR/vocab-dcat/"/>
+        <rdfs:label xml:lang="en">Catalog</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/composedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/FactCheckResource"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/composedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/News"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/composedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Publisher"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/composedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/SocialMediaUser"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A collection of data, published or curated by a single source, and available for access or download in one or more representations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/TR/vocab-dcat/"/>
+        <rdfs:label xml:lang="en">Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#Category -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#Category">
+        <rdfs:comment>Category is a group of quality dimensions in which a common type of information is used as quality indicator</rdfs:comment>
+        <rdfs:label>Category</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#Dimension -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#Dimension">
+        <rdfs:comment>Dimension is a criteria relevant for assessing quality. Each dimension is part of a broader category of Data Quality Assessment</rdfs:comment>
+        <rdfs:label>Dimension</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#Metric -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#Metric">
+        <rdfs:comment>Metric is a standard to measure a quality dimension. An observation(instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.</rdfs:comment>
+        <rdfs:label xml:lang="en">QualityMetric</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#QualityAnnotation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityAnnotation">
+        <rdfs:comment>QualityAnnotation is a quality annotations, including ratings, quality certificates or feedback that can be associated to datasets</rdfs:comment>
+        <rdfs:label>QualityAnnotation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#QualityCertificate -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityCertificate">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dqv#QualityAnnotation"/>
+        <rdfs:comment>QualityCertificate is subclass of QualityAnnotation. It associates a dataset to a document that	certifies the data quality according to a set of quality assessment rules</rdfs:comment>
+        <rdfs:label>QualityCertificate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#QualityMeasurement -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityMeasurement">
+        <rdfs:comment>QualityMeasurement is the evaluation of a given dataset a specific quality metric.</rdfs:comment>
+        <rdfs:label>QualityMeasurement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dqv#QualityPolicy -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dqv#QualityPolicy">
+        <rdfs:comment xml:lang="en">QualityPolicy is a policy or agreement that is chiefly governed by data quality concerns</rdfs:comment>
+        <rdfs:label xml:lang="en">QualityPolicy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Algorithm -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Algorithm">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:comment xml:lang="en">An optimization algorithm in machine learning problems minimizes a loss or cost function by systematically choosing input values from within an allowed set and computing the value of the function.</rdfs:comment>
+        <rdfs:label xml:lang="en">Algorithm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#EvaluationMeasure -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#EvaluationMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">EvaluationMeasure is a measure to assess the performance of the model generated by the process that realizes the task. Examples are predictive accuracy or f-measure.</rdfs:comment>
+        <rdfs:label xml:lang="en">EvaluationMeasure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#EvaluationProcedure -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#EvaluationProcedure">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:comment xml:lang="en">EvaluationProcedure is a technique to evaluate machine learning models. Examples are cross-validation and leave-one-out.</rdfs:comment>
+        <rdfs:label>EvaluationProcedure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#EvaluationSpecification -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#EvaluationSpecification">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#specifiedBy"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Iteration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">EvaluationSpecification is a specification of an evaluation measure and an evaluation procedure to assess the performance of the process that realizes the task.</rdfs:comment>
+        <rdfs:label xml:lang="en">EvaluationSpecification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Experiment -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Experiment">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#Run"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The training process of fake news detection model consists of several experiments that are subclasses of the Process and they are part of a Study(research project). Each Experiment is done for a specific goal decided by the study it is part of.</rdfs:comment>
+        <rdfs:label>Experiment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Implementation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Implementation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/implements"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Implementation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#InformationEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#InformationEntity">
+        <rdfs:label xml:lang="en">InformationEntity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Model -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Model">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasOutput"/>
+                <owl:someValuesFrom rdf:resource="https://www.openriskmanual.org/ns/doam#Output"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Model is a generalization of a set of training data able to predict values for unseen instances. It is an output from an execution of a data mining algorithm implementation. Models have a dual nature. They can be treated as data structures and as such represented, stored and manipulated. On the other hand, they act as functions and are executed, taking as input data examples and giving as output the result of applying the function to a data example. Models can also be divided into global or local ones. A global model has global coverage of a data set, i.e., it generalizes the whole data set. A local model, such as a pattern set, is a set of local hypotheses, i.e. each applies to a limited region of the data set.</rdfs:comment>
+        <rdfs:label xml:lang="en">Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#ModelEvaluation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#ModelEvaluation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#specifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#EvaluationMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">ModelEvaluation is a setting of a value of the performance measure specified by the evaluation specification. It connects a measure specification with its value.</rdfs:comment>
+        <rdfs:label xml:lang="en">ModelEvaluation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Process -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Process">
+        <rdfs:comment xml:lang="en">This class represents  the process  followed in a classification problem using a particular machine learning model.</rdfs:comment>
+        <rdfs:label>Process</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Run -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Run">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#achieves"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Iteration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasInput"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasOutput"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#Model"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasOutput"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#ModelEvaluation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Run is an execution of an implementation on a machine (computer). It is limited in time (has a start and end point), can be successful or failed.</rdfs:comment>
+        <rdfs:label>Run</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Study -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Study">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#Experiment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Study is a collection of runs that belong together to do some kind of analysis on its results. This analysis can be general or very specific (e.g. a hypothesis test). Can be linked to files, data, that belong to it.</rdfs:comment>
+        <rdfs:label>Study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/mls#Task -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/mls#Task">
+        <owl:equivalentClass rdf:resource="https://nobias-project.eu/Iteration"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/mls#InformationEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#definedOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#defines"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#EvaluationSpecification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:comment xml:lang="en">Represents the creator of the dataset.</rdfs:comment>
+        <rdfs:label xml:lang="en">Creator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ActivityBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ActivityBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/InteractionBias"/>
+        <dc:citation xml:lang="en">Baeza-Yates, R. 2020. Biases on Social Media Data: (Keynote). In Companion Proceedings of the Web Conference 2020 (WWW ’20Companion), April 20–24, 2020, Taipei, Taiwan.ACM, New York, NY, USA,2 pages. 
+https://doi.org/10.1145/3366424.3383564</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">ActivityBias</rdfs:label>
+        <skos:definition xml:lang="en">This refers to how not all people are active all the time in social media (90% are lurkers), and how a select few are responsible for creating more than 50% of content.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/AnnotatorBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/AnnotatorBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">AnnotatorBias</rdfs:label>
+        <skos:definition xml:lang="en">Annotator bias is associated to data labelled or/and annotated by humans, and it refers to how every annotator has its own habit to label the data, as well as motivations (i.e. financial).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Argument -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Argument">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An argument is the term of an atom that is linked with a predicate. The amount of arguments per atom is equal to the predicate’s arity.</rdfs:comment>
+        <rdfs:label xml:lang="en">Argument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Atom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Atom">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">An atom is a predicate combined with a sequence of terms of length equal to the predicate’s arity. This sequence is called the atom’s arguments. Two Atoms are equal if their Predicate and arguments are equal.</rdfs:comment>
+        <rdfs:label xml:lang="en">Atom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/AtomArgument -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/AtomArgument">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">AtomArgument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/BeliefBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/BeliefBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/CognitiveBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">BeliefBias</rdfs:label>
+        <skos:definition xml:lang="en">Belief bias is the tendency to judge the strength of arguments based on the plausibility of their conclusion rather than how strongly they support that conclusion. A person is more likely to accept an argument that supports a conclusion that aligns with their values, beliefs and prior knowledge, while rejecting counter arguments to the conclusion.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/BiasDetectionMethod -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/BiasDetectionMethod">
+        <rdfs:comment xml:lang="en">Bias Detection Method represents the method that was used to detect bias. For example, statistical analysis, expert assessment, quality metrics, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">BiasDetectionMethod</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/BiasDocumentation -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/BiasDocumentation">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/DocumentationType"/>
+        <rdfs:label xml:lang="en">BiasDocumentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/BiasType -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/BiasType">
+        <dc:citation xml:lang="en">Pitoura, E. 2020. Social-minded Measures of Data Quality: Fairness, Diversity, and Lack of Bias. J. Data and Information Quality 12, 3, Article 12 (July 2020), 8 pages.</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">BiasType</rdfs:label>
+        <skos:definition xml:lang="en">Bias is an inclination, or prejudice for, or against one person, or group, especially in a way considered to be unfair and “a concentration on, or interest in one particular area, or subject.”</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ClassificationFramework -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ClassificationFramework">
+        <rdfs:comment xml:lang="en">Framework  used to solve the classification  problem, for instance identify which of a set of categories (sub-populations) an observation (or observations) belongs to.</rdfs:comment>
+        <rdfs:label xml:lang="en">ClassificationFramework</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/CognitiveBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/CognitiveBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasType"/>
+        <dc:citation xml:lang="en">Manoogian J, Benson B (2017) Cognitive bias codex.https://betterhumans.pub/cognitive-bias-cheat-sheet-55a472476b18</dc:citation>
+        <dc:citation xml:lang="en">https://en.wikipedia.org/wiki/Cognitive_bias</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">CognitiveBias</rdfs:label>
+        <skos:comment xml:lang="en">Cognitive biases can sometimes lead to perceptual distortion, inaccurate judgment, illogical interpretation, or what is broadly called irrationality.</skos:comment>
+        <skos:definition xml:lang="en">Cognitive biases are systematic patterns of deviation from norm and/or rationality in judgment.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ConfirmationBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ConfirmationBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/CognitiveBias"/>
+        <dc:citation xml:lang="en">Farkas, J. &amp; Schou, J. (2018) Fake News as a Floating Signifier: Hegemony, Antagonism and the Politics of Falsehood, Javnost - The Public, 25:3, 298-314, DOI:
+10.1080/13183222.2018.1463047</dc:citation>
+        <dc:citation xml:lang="en">Manoogian J, Benson B (2017) Cognitive bias codex.https://betterhumans.pub/cognitive-bias-cheat-sheet-55a472476b18</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">ConfirmationBias</rdfs:label>
+        <skos:comment xml:lang="en">Disconfirmation bias or motivated skepticism works the same concept but in opposite direction and is what gives way to polarization within the context of disinformation, fake news and political convictions.</skos:comment>
+        <skos:definition xml:lang="en">Confirmation bias is the tendency to search for, interpret, favor, and recall information in a way that confirms or supports one&apos;s prior beliefs or values.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/CoverageBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/CoverageBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">CoverageBias</rdfs:label>
+        <skos:comment xml:lang="en">Upon data acquisition, data scientist or machine learning engineer must ensure  that there are enough entries in the datasets for each object category. Concept closely linked to diversity.</skos:comment>
+        <skos:definition xml:lang="en">Coverage bias in survey research means that a research sample is not representative and that a number of people in the population have zero chance of being included in the sample.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DataCleaning -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DataCleaning">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Pre-processing"/>
+        <rdfs:comment>method used for data cleaning</rdfs:comment>
+        <rdfs:label xml:lang="en">DataCleaning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DataIntegration -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DataIntegration">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Pre-processing"/>
+        <rdfs:comment>method used for data integration</rdfs:comment>
+        <rdfs:label xml:lang="en">DataIntegration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DataTransformation -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DataTransformation">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Pre-processing"/>
+        <rdfs:comment>method used for data transformation</rdfs:comment>
+        <rdfs:label xml:lang="en">DataTransformation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DatarReduction -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DatarReduction">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Pre-processing"/>
+        <rdfs:comment>method used for data reduction</rdfs:comment>
+        <rdfs:label xml:lang="en">DataReduction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DatasetDocumentation -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DatasetDocumentation">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/DocumentationType"/>
+        <rdfs:label xml:lang="en">DatasetDocumentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/DocumentationType -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/DocumentationType">
+        <rdfs:label xml:lang="en">DocumentationType</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ExpertAssessment -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ExpertAssessment">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasDetectionMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ExposureBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ExposureBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/FunctionalBias"/>
+        <dc:citation xml:lang="en">Baeza-Yates, R. 2019. Bias in Search and Recommender Systems: (Keynote).</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">ExposureBias</rdfs:label>
+        <skos:comment xml:lang="en">Another related term &apos;echo chamber&apos;, which refers to situations in which beliefs are amplified or reinforced by communication and repetition inside a closed system and insulated from rebuttal.</skos:comment>
+        <skos:comment xml:lang="en">Related term is &apos;Filter Bubble&apos;, which is a phenomenon that limits an individual’s exposure to a full spectrum of news and other information on the internet by algorithmically prioritizing content that matches a user’s demographic profile and online history or excluding content that does not.</skos:comment>
+        <skos:comment xml:lang="en">The term filter bubble was coined by internet activist Eli Pariser in his book, &quot;The Filter Bubble: What the Internet Is Hiding from You&quot; (2011).</skos:comment>
+        <skos:definition xml:lang="en">This refers to the type of content that is shown or exposed to Social Media platform users.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/FactCheckResource -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/FactCheckResource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/associatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Factcheck resource is a third party that assess the veracity and or credibility of news, claims, etc. as well as of news publishers.</rdfs:comment>
+        <rdfs:label xml:lang="en">FactCheckResource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/FunctionalBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/FunctionalBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasType"/>
+        <dc:citation xml:lang="en">Olteanu A, Castillo C, Diaz F and Kıcıman E (2019) Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. Front. Big Data 2:13. doi: 10.3389/fdata.2019.00013</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">FunctionalBias</rdfs:label>
+        <skos:definition xml:lang="en">Biases that are a result of platform-specific mechanisms or affordances, that is, the possible actions within each system or environment.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/GeographicalBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/GeographicalBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:citation xml:lang="en">Ricardo Baeza-Yates. 2018. Bias on the web. Commun. ACM 61, 6 (June 2018), 54–61. DOI:https://doi.org/10.1145/3209581</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">GeographicalBias</rdfs:label>
+        <skos:definition xml:lang="en">When false assumptions are made based on locale, or failure to account for regional differences. This type of bias can manifest itself in dfifferent ways: absense of data from certain location, major locations are overrepresented, failure to detect regional disparities or singularties, among others.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/GroundAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/GroundAtom">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Atom"/>
+        <rdfs:comment xml:lang="en">An atom with only constants for arguments is called a ground atom and has a truth value in the range [0,1].</rdfs:comment>
+        <rdfs:label xml:lang="en">GroundAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/GroundRule -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/GroundRule">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Rule"/>
+        <rdfs:comment>Represented as a logical disconjunction of ground atoms.</rdfs:comment>
+        <rdfs:label xml:lang="en">GroundRule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/GroundRuleGroundAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/GroundRuleGroundAtom">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">GroundRuleGroundAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/IngroupBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/IngroupBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/CognitiveBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">IngroupBias</rdfs:label>
+        <skos:definition xml:lang="en">A bias in which people tend to favor people who exist in similar groups as them. These groups could be formed by gender, race, ethnicity, favorite sports team, political convictions.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/InstantiatedArgument -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/InstantiatedArgument">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/Argument"/>
+        <rdfs:comment xml:lang="en">A constant that subsitutes an argument to a predicate.</rdfs:comment>
+        <rdfs:label xml:lang="en">InstantiatedArgument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/InteractionBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/InteractionBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasType"/>
+        <dc:citation xml:lang="en">Olteanu A, Castillo C, Diaz F and Kıcıman E (2019) Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. Front. Big Data 2:13. doi: 10.3389/fdata.2019.00013</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">InteractionBias</rdfs:label>
+        <skos:definition xml:lang="en">Systematic distortions in user behavior across platforms or contexts, or across users represented in different datasets that arise due the user interaction with the platform.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Iteration -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Iteration">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">Iteration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/IterationRVA -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/IterationRVA">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">IterationRVA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/IterationTerm -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/IterationTerm">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">IterationTerm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/LanguageBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/LanguageBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:citation xml:lang="en">Baeza-Yates, R. 2019. Bias in Search and Recommender Systems: (Keynote).</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">LanguageBias</rdfs:label>
+        <skos:comment xml:lang="en">In relation to web content creation,  there is a significant skew towards the English language when it comes to language used by users in the Internet and the language of websites.</skos:comment>
+        <skos:definition xml:lang="en">The over representation of a particular language in content creation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/LearningDocumentation -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/LearningDocumentation">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/DocumentationType"/>
+        <rdfs:label xml:lang="en">LearningDocumentation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/LinkingBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/LinkingBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/InteractionBias"/>
+        <dc:citation xml:lang="en">Olteanu A, Castillo C, Diaz F and Kıcıman E (2019) Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. Front. Big Data 2:13. doi: 10.3389/fdata.2019.00013</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">LinkingBias</rdfs:label>
+        <skos:definition xml:lang="en">Behavioral biases that are expressed as differences in the attributes of networks obtained from user connections, interactions or activity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/MaxTerm -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/MaxTerm">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A max term has the form max(0, constant + c0 * r0 + c1* r1 ...)^2 , where cx is a coefficient and ry is the current value of a RandomVariableAtom. It also has a incompatibility representinig the evaluation of this term.</rdfs:comment>
+        <rdfs:label xml:lang="en">MaxTerm</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/MeasuresBiasIn -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/MeasuresBiasIn">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/BiasDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">MeasuresBiasIn</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/MediaBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/MediaBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/SocietalBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">MediaBias</rdfs:label>
+        <skos:comment xml:lang="en">It commonly refers to how a reporter, news organisation, or TV show covers a political candidate or a policy issue.</skos:comment>
+        <skos:definition xml:lang="en">Media bias is the bias or perceived bias of journalists and news producers within the mass media in the selection of events, the stories that are reported, and how they are covered.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/NetworkBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/NetworkBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/FunctionalBias"/>
+        <rdfs:comment xml:lang="en">Also known as the Matthew Effect, and pertaining to the study of networks. Network bias describes the preferential growth of some nodes in social networks, and how their popularity attracts more connections at a higher rate, than other less visible ones.</rdfs:comment>
+        <rdfs:label xml:lang="en">NetworkBias</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/News -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/News">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/associatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>News is the record of information on current events in form of a report. It is provided through various mass media for example print, broadcast or through the internet websites.</rdfs:comment>
+        <rdfs:label>News</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ObservedAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ObservedAtom">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <rdfs:comment xml:lang="en">A ground atom with known and fixed truth value which is used for training. The predicate of this atom is marked as closed in the database.</rdfs:comment>
+        <rdfs:label xml:lang="en">ObservedAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ObserverBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ObserverBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:citation xml:lang="en">Catalogue of Bias Collaboration. Mahtani K, Spencer EA, Brassey J,  Observer bias. In: Catalogue Of Bias 2017:   https://www.catalogofbias.org/biases/observer-bias</dc:citation>
+        <rdfs:label xml:lang="en">ObserverBias</rdfs:label>
+        <skos:definition xml:lang="en">Observer bias is a form of detection bias originating at a study&apos;s stage of observing or recording information. Different observers may assess subjective criteria differently, and cognitive biases can affect how a subject is assessed.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/ObsvAtomInstArgument -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/ObsvAtomInstArgument">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">ObsvAtomInstArgument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/PartisanBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/PartisanBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/SocietalBias"/>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">PartisanBias</rdfs:label>
+        <skos:comment xml:lang="en">also known as Political bias</skos:comment>
+        <skos:definition xml:lang="en">Political bias is a bias or perceived bias involving the slanting or altering of information to make a political position or political candidate seem more attractive.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/PopularityBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/PopularityBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/FunctionalBias"/>
+        <dc:citation xml:lang="en">Baeza-Yates, R. 2019. Bias in Search and Recommender Systems: (Keynote).</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">PopularityBias</rdfs:label>
+        <skos:definition xml:lang="en">Popularity bias refers to a characteristic of recommenders where due to algorithmic optimization, popular items are recommended frequently while less popular, niche products, are recommended rarely or not at all.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Pre-processing -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Pre-processing">
+        <rdfs:comment>Pre-processing class defines the method by which Pre-procesing is done. Typically it stores the files used for data pre-processing. There are many ways to do pre-processing like data reduction, data cleaning, data integration and data transformation which are the subclasses of Pre-processing class.</rdfs:comment>
+        <rdfs:label xml:lang="en">Pre-processing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Predicate -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Predicate">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A predicate is a relation defined by a unique identifier and a positive integer
+called its arity, which denotes the number of terms it accepts as arguments. Every predicate in a PSL program must have a unique identifier as its name.</rdfs:comment>
+        <rdfs:label xml:lang="en">Predicate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Publisher -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Publisher">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/associatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Publisher or NewsSource is the source of news report. It is usually a publishing company or a media house which publishes the news using mass media.</rdfs:comment>
+        <rdfs:label xml:lang="en">Publisher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/RandomAtomInstArgument -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/RandomAtomInstArgument">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Instantiated Argument to a RandomVariableAtom</rdfs:comment>
+        <rdfs:label xml:lang="en">RandomAtomInstArgument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/RandomVariableAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/RandomVariableAtom">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/GroundAtom"/>
+        <rdfs:comment>A random variable atom (or: RVA) is an atom whose predicate is open the database. Its truth value is variable because it needs to be inferred in the classification process.</rdfs:comment>
+        <rdfs:label xml:lang="en">RandomVariableAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/RankingBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/RankingBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/InteractionBias"/>
+        <dc:citation rdf:resource="https://ntent.com/fake-news-and-the-power-of-algorithms/"/>
+        <dc:citation xml:lang="en">Baeza-Yates, R. 2019. Bias in Search and Recommender Systems: (Keynote).</dc:citation>
+        <rdfs:label xml:lang="en">RankingBias</rdfs:label>
+        <skos:comment xml:lang="en">Associated to self-selection bias, confirmation bias, position bias.</skos:comment>
+        <skos:comment xml:lang="en">Example: When an article is written, one of the sources guiding the research/investigation may be referencing to the top results on a search engine. &quot;When the article is published again on the Web, it in turn affects the ranking of the results. Thus, the concentration on a few sources is strengthened, new content is influenced in that direction, and the search engines regard it as correct.&quot;</skos:comment>
+        <skos:definition xml:lang="en">Refers to a characteristic of recommenders where due to algorithmic optimization some items are better positioned than others, leading to users in social media platforms  to assume that higher-ranked items are better choices.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Rule -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Rule">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator xml:lang="en">russo</dc:creator>
+        <rdfs:comment>A logical implication that has one or more atoms in the body and one in the head of the implication. It is used to constrain the compatibility of its contained atoms (either negated or not).</rdfs:comment>
+        <rdfs:label xml:lang="en">Rule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/RuleAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/RuleAtom">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>Atom that makes up a rule.</rdfs:comment>
+        <rdfs:label xml:lang="en">RuleAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/SharingBehavior -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/SharingBehavior">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/associatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">SharingBehaviour describes the behaviour of the user that shares news on social media based on the quantity of news the share.</rdfs:comment>
+        <rdfs:label xml:lang="en">SharingBehavior</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/SkewDistributionBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/SkewDistributionBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <rdfs:comment xml:lang="en">Analysis of the distribution of a variable to detect over-represented groups.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This refers to observations in a particular sub-set, i.e., a variable in a dataset, that are statistically overrepresented within that corresponding sub-set.</rdfs:comment>
+        <rdfs:label xml:lang="en">OverrepresentationBias</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/SocialInteraction -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/SocialInteraction">
+        <rdfs:label xml:lang="en">SocialInteraction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/SocialMediaUser -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/SocialMediaUser">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/associatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/DatasetDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>They are the individual users of social media websites like Facebook, Twitter or Instagram. They can share news on their platform with their network, comment on it and propagate it. Users follow other users and create their networks and communities online based on their shared interests and opinions.</rdfs:comment>
+        <rdfs:label>SocialMediaUser</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/SocietalBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/SocietalBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasType"/>
+        <dc:citation xml:lang="en">Pitoura, E. 2020. Social-minded Measures of Data Quality: Fairness, Diversity, and Lack of Bias. J. Data and Information Quality 12, 3, Article 12 (July 2020), 8 pages. 
+https://doi.org/10.1145/3404193</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">SocietalBias</rdfs:label>
+        <skos:comment xml:lang="en">Related to Cultural biases</skos:comment>
+        <skos:definition xml:lang="en">Objectionable social structures, human biases, and preferences that are reflected in data or, when designing, implementing, evaluating and using algorithms and systems.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/StatisticalBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/StatisticalBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/BiasType"/>
+        <dc:citation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Olteanu A, Castillo C, Diaz F and Kıcıman E (2019) Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. Front. Big Data 2:13. doi: 10.3389/fdata.2019.00013</dc:citation>
+        <dc:citation xml:lang="en">Pitoura, E. 2020. Social-minded Measures of Data Quality: Fairness, Diversity, and Lack of Bias. J. Data and Information Quality 12, 3, Article 12 (July 2020), 8 pages. 
+https://doi.org/10.1145/3404193</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <rdfs:label xml:lang="en">StatisticalBias</rdfs:label>
+        <skos:comment xml:lang="en">Could also be called &apos;Data Bias&apos;: A systematic distortion in the sampled data that compromises its representativeness.</skos:comment>
+        <skos:comment xml:lang="en">One of many quality issues that can attributed to data.</skos:comment>
+        <skos:definition xml:lang="en">Statistical biases mostly refer to non-representative sampling and errors in measurements.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/StatisticalRelationalLearning -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/StatisticalRelationalLearning">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/ClassificationFramework"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:label xml:lang="en">StatisticalRelationalLearning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/TechniqueArquitecture -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/TechniqueArquitecture">
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">This class is specific to the fake news classification problem, as it represents the technique by which the problem is going to be solved.</rdfs:comment>
+        <rdfs:label xml:lang="en">TechniqueArquitecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/TemporalBias -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/TemporalBias">
+        <rdfs:subClassOf rdf:resource="https://nobias-project.eu/StatisticalBias"/>
+        <dc:citation xml:lang="en">Olteanu A, Castillo C, Diaz F and Kıcıman E (2019) Social Data: Biases, Methodological Pitfalls, and Ethical Boundaries. Front. Big Data 2:13. doi: 10.3389/fdata.2019.00013</dc:citation>
+        <dc:creator xml:lang="en">russoma</dc:creator>
+        <skos:definition xml:lang="en">Systematic distortions across user populations or behaviors over time.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/TermRandomVariableAtom -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/TermRandomVariableAtom">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment>A RVA that is part of a term</rdfs:comment>
+        <rdfs:label xml:lang="en">TermRandomVariableAtom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://nobias-project.eu/Weight -->
+
+    <owl:Class rdf:about="https://nobias-project.eu/Weight">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/mls#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/hasDocumentationType"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/LearningDocumentation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">russo</dc:creator>
+        <rdfs:comment xml:lang="en">The weights express how strongly the model expects each corresponding clause to hold; the higher the weight, the more probable that it is true according to the model.</rdfs:comment>
+        <rdfs:label xml:lang="en">Weight</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.openriskmanual.org/ns/doam#Model_Components -->
+
+    <owl:Class rdf:about="https://www.openriskmanual.org/ns/doam#Model_Components">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Argument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Atom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/AtomArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/GroundRuleGroundAtom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Iteration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/IterationRVA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/IterationTerm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/MaxTerm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/ObsvAtomInstArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Predicate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/RandomAtomInstArgument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Rule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/TermRandomVariableAtom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://nobias-project.eu/comprisedOf"/>
+                <owl:someValuesFrom rdf:resource="https://nobias-project.eu/Weight"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Model Components are the components of predictive model in use. Different types of predictive model have different components. For example, a Bayesian Network Model will have components like Bayesian Network Nodes, a Rule Set Model will have Rule Set as components and Neural Network Model will have Neural Layer, Neural Inputs/Outputs as modelling components.</rdfs:comment>
+        <rdfs:label xml:lang="en">ModelComponent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://www.openriskmanual.org/ns/doam#Output -->
+
+    <owl:Class rdf:about="https://www.openriskmanual.org/ns/doam#Output">
+        <rdfs:comment xml:lang="en">doam:Output is the output of classification model.</rdfs:comment>
+        <rdfs:label>Output</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://nobias-project.eu/ADMM -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/ADMM">
+        <rdf:type rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+        <dc:creator xml:lang="en">russo</dc:creator>
+        <rdfs:comment xml:lang="en">Alternating Direction Method of Multipliers or ADMM is an algorithm which tries to solve the problem faced using the Method of Multipliers by combining the decomposability of dual ascent with the Greater convergence properties of the Method of multipliers.
+ADMM is a simple and powerful iterative algorithm for convex optimization problems. Makes for faster inference procesess.</rdfs:comment>
+        <rdfs:comment xml:lang="en">In PSL the oprimizer  minimizes the total weighted incompatibility of terms.</rdfs:comment>
+        <rdfs:label xml:lang="en">ADMM</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nobias-project.eu/CVFold -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/CVFold">
+        <rdf:type rdf:resource="http://www.w3.org/ns/mls#EvaluationProcedure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nobias-project.eu/CredibilityBased -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/CredibilityBased">
+        <rdf:type rdf:resource="https://nobias-project.eu/TechniqueArquitecture"/>
+        <terms:created xml:lang="en">russo</terms:created>
+        <rdfs:comment xml:lang="en">This type of architecture predicts the veracity of a news based on determining the credibility of input sources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Credibility Based</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nobias-project.eu/FakeNewsNet -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/FakeNewsNet">
+        <rdf:type rdf:resource="http://www.w3.org/ns/dcat#Catalogue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nobias-project.eu/HL-RMF -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/HL-RMF">
+        <rdf:type rdf:resource="https://nobias-project.eu/StatisticalRelationalLearning"/>
+        <terms:created xml:lang="en">russo</terms:created>
+        <rdfs:comment xml:lang="en">Hinge-loss Markov random fields are a  class of probabilistic graphical models designed to enable scalable modeling of rich, structured data.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hinge Loss-Random Markov Field</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://nobias-project.eu/JointCrediblityModel -->
+
+    <owl:NamedIndividual rdf:about="https://nobias-project.eu/JointCrediblityModel">
+        <rdf:type rdf:resource="http://www.w3.org/ns/mls#Implementation"/>
+        <dc:creator xml:lang="en">russo</dc:creator>
+        <rdfs:comment xml:lang="en">PSL program is a set of rules, each of which is a template for hinge-loss
+potentials or hard linear constraints. When grounded over a base of ground atoms, a PSL program induces a HL-MRF conditioned on any specified observations.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Stephen Bach, Matthias Broecheler, Bert Huang, and Lise Getoor. Hinge-Loss Markov Random Fields and Probabilistic Soft Logic. Journal of Machine Learning Research (JMLR). 2017.</rdfs:comment>
+        <rdfs:label xml:lang="en">Probabilistic Soft Logic</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

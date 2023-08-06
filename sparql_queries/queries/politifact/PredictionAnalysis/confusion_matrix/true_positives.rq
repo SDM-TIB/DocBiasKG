@@ -1,0 +1,52 @@
+# All true positives (Fake news that are correctly classified as fake)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX base: <https://nobias-project.eu/>
+SELECT ?NewsID (SAMPLE(?Publisher) as ?PublishedBy) (Count(?NewsID) AS ?SharingUsers) (SAMPLE(?value) as ?Prediction) (SAMPLE(?RoundedPrediction) as ?RoundedPrediction) (SAMPLE(?TruthValue) as ?TruthValue) (SAMPLE(?Pubcred) as ?PubCred) (Avg(xsd:float(?user_value)) AS ?avgUserCred) (abs(xsd:float(?Prediction)-?TruthValue) AS ?predictionError) 
+WHERE {
+# Get all RVAs Fakenews(N)
+?rva_instance rdf:type <https://nobias-project.eu/RandomVariableAtom> ;
+   <https://nobias-project.eu/rva_name> ?name ;
+   <https://nobias-project.eu/hasDataset> <https://nobias-project.eu/Dataset/Data2> ;
+   <https://nobias-project.eu/value> ?value .
+FILTER regex(?name, "FAKENEWS", "i") .
+# Extracting news argument from RVA
+?rand_inst_arg <https://nobias-project.eu/hasAtom> ?rva_instance .
+?rva_instance <https://nobias-project.eu/value> ?news_cred .
+?rand_inst_arg <https://nobias-project.eu/hasArgument> ?news_arg .
+?obs_inst_arg <https://nobias-project.eu/hasArgument> ?news_arg .
+?news_arg <https://nobias-project.eu/inst_arg_name> ?NewsID .
+    BIND((IF(CONTAINS(?NewsID,"Fake"),1,0)) as ?TruthValue) .
+    BIND((IF(xsd:float(?value) >= 0.5,1,0)) as ?RoundedPrediction) .
+    # Filter for true positives
+    FILTER (?RoundedPrediction = 1 && ?TruthValue = 1) .
+# Getting User argument from ObservedAtom UserShare(N,U)
+?obs_inst_arg rdf:type <https://nobias-project.eu/ObsvAtomInstArgument> .
+?obs_inst_arg <https://nobias-project.eu/hasAtom> ?obs_atom .
+?obs_inst_arg2 <https://nobias-project.eu/hasAtom> ?obs_atom .
+?obs_inst_arg2 <https://nobias-project.eu/position> "2" .
+?obs_inst_arg2 <https://nobias-project.eu/hasArgument> ?user_arg_instance .
+# Getting Usercred through Usercredlat(U)
+?inst_arg <https://nobias-project.eu/hasAtom> ?user_atom .
+?inst_arg rdf:type <https://nobias-project.eu/RandomAtomInstArgument> .
+?inst_arg <https://nobias-project.eu/hasArgument> ?user_arg_instance .
+?user_atom <https://nobias-project.eu/rva_name> ?user_atom_name .
+FILTER regex(?user_atom_name, "USERCREDLAT", "i") .
+?user_atom <https://nobias-project.eu/value> ?user_value .
+# Getting Publisher argument from ObservedAtom NewsPub(N,P)
+?pub_atom <https://nobias-project.eu/obsatom_name> ?newspub_atom_name .
+FILTER regex(?newspub_atom_name, "NEWSPUB", "i") .
+FILTER regex(?newspub_atom_name, ?NewsID, "i") .
+?pub_obs_arg <https://nobias-project.eu/hasAtom> ?pub_atom .
+?pub_obs_arg <https://nobias-project.eu/position> "2" .
+?pub_obs_arg <https://nobias-project.eu/hasArgument> ?pub_arg_instance .
+?pub_arg_instance <https://nobias-project.eu/inst_arg_name> ?Publisher .
+# and the publisher credibility as well
+?pub_rva_arg <https://nobias-project.eu/hasArgument> ?pub_arg_instance .
+?pub_rva_arg a <https://nobias-project.eu/RandomAtomInstArgument> .
+?pub_rva_arg <https://nobias-project.eu/hasAtom> ?pub_cred_atom .
+?pub_cred_atom <https://nobias-project.eu/value> ?Pubcred
+}
+GROUP BY ?NewsID

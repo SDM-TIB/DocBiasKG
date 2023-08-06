@@ -1,0 +1,10 @@
+# User diversity for each news (No of unique users)
+select ?news (COUNT(?user) as ?userDiversityCount) where { 
+        ?sharingBehavior a <https://nobias-project.eu/SharingBehavior> .
+        ?sharingBehavior <https://nobias-project.eu/News> ?news .
+        ?sharingBehavior <https://nobias-project.eu/SocialMediaUser> ?user .
+        # Change to Data2 for Politifact or remove for both
+        ?news <https://nobias-project.eu/associatedTo> <https://nobias-project.eu/Dataset/Data1> .
+	} 
+GROUP BY ?news
+ORDER BY DESC(?userDiversityCount)

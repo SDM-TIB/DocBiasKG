@@ -1,0 +1,52 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+
+<IterationTerm>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/mapsTerms.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/IterationTerm/{iter_id}_{term_id}_{Dataset}_{value}";
+  rr:class nobias:IterationTerm
+  ];
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasIteration;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Iteration/{iter_id}";
+	]
+  ];
+        
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasTerm;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/MaxTerm/{term_id}_{Dataset}";
+	]
+  ];
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:hasDataset;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/Dataset/{Dataset}";
+	  ]
+  ];
+  
+  rr:predicateObjectMap [
+	 rr:predicate nobias:currentValue;
+	 rr:objectMap [
+		  rml:reference "value"
+	  ]
+  ].

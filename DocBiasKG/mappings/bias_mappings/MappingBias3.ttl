@@ -1,0 +1,79 @@
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix nobias: <https://nobias-project.eu/> .
+@base <https://nobias-project.eu/> .
+
+
+  
+<BiasUserMapping>
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+	rml:source "/git/SDM-RDFizer/mappings/input/XXX.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [
+  rr:template "https://nobias-project.eu/MeasuresBiasIn/{MeasureName}{MeasureID}-{sharingUser}";
+  rr:class nobias:MeasuresBiasIn
+  ];  
+  
+  rr:predicateObjectMap [
+	  rr:predicate nobias:measuresBiasInUser;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/SocialMediaUser/{sharingUser}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	  rr:predicate nobias:metricMeasuresBiasBy;
+	  rr:objectMap [
+		  rr:template "https://nobias-project.eu/BiasDetectionMethod/{MeasureName}";
+	  ]
+  ];  
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:biasScore;
+	  rr:objectMap [
+		  rml:reference "MeasureValue"
+	  ]
+  ];
+
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:valueCount;
+	  rr:objectMap [
+		  rml:reference "RawCounts"
+	  ]
+  ]; 
+
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:thresholdCount;
+	  rr:objectMap [
+		  rml:reference "MeasureThresholdCounts"
+	  ]
+  ]; 
+
+
+
+  rr:predicateObjectMap [
+	 rr:predicate nobias:threshold;
+	  rr:objectMap [
+		  rml:reference "MeasureThreshold"
+	  ]
+  ].
+  
+  
+  
+
+
+
+
+
