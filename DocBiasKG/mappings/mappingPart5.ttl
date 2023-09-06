@@ -15,7 +15,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-news.csv";
+	rml:source "xxx/mappings/input/rva-news.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -36,7 +36,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-users.csv";
+	rml:source "xxx/mappings/input/rva-users.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -57,7 +57,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rva-publishers.csv";
+	rml:source "xxx/mappings/input/rva-publishers.csv";
     rml:referenceFormulation ql:CSV
   ];
 

@@ -15,7 +15,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/model.csv";
+	rml:source "xxx/mappings/input/model.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -37,7 +37,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/folds.csv";
+	rml:source "xxx/mappings/input/folds.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -74,7 +74,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/performances.csv";
+	rml:source "xxx/mappings/input/performances.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -95,7 +95,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/performances.csv";
+	rml:source "xxx/mappings/input/performances.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -117,7 +117,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+	rml:source "xxx/mappings/input/iterations.csv";
     rml:referenceFormulation ql:CSV
   ];
   
@@ -139,7 +139,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+	rml:source "xxx/mappings/input/iterations.csv";
     rml:referenceFormulation ql:CSV
   ];
   
@@ -174,7 +174,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+	rml:source "xxx/mappings/input/iterations.csv";
     rml:referenceFormulation ql:CSV
   ];
   
@@ -209,7 +209,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+	rml:source "xxx/mappings/input/iterations.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -250,7 +250,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/iterations.csv";
+	rml:source "xxx/mappings/input/iterations.csv";
     rml:referenceFormulation ql:CSV
   ];
 

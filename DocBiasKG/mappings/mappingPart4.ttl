@@ -14,7 +14,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/instantiated_args.csv";
+	rml:source "xxx/mappings/input/instantiated_args.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -48,7 +48,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgPublisher.csv";
+	rml:source "xxx/mappings/input/InstArgPublisher.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -75,7 +75,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgNews.csv";
+	rml:source "xxx/mappings/input/InstArgNews.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -103,7 +103,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/InstArgUser.csv";
+	rml:source "xxx/mappings/input/InstArgUser.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -131,7 +131,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_instantiated_args_obs.csv";
+	rml:source "xxx/mappings/input/has_instantiated_args_obs.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -173,7 +173,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_instantiated_args_rva.csv";
+	rml:source "xxx/mappings/input/has_instantiated_args_rva.csv";
     rml:referenceFormulation ql:CSV
   ];
 

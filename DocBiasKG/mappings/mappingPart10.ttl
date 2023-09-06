@@ -135,7 +135,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/bias_reviews.csv";
+	rml:source "xxx/mappings/input/bias_reviews.csv";
     rml:referenceFormulation ql:CSV
   ];
 

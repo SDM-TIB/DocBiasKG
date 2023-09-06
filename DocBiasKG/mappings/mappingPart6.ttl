@@ -13,7 +13,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/mapsRVA.csv";
+	rml:source "xxx/mappings/input/mapsRVA.csv";
     rml:referenceFormulation ql:CSV
   ];
 

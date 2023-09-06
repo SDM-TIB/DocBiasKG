@@ -22,7 +22,7 @@
   a rr:TriplesMap;
     
   rml:logicalSource [
-    rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/datasetextended.csv";
+    rml:source "xxx/mappings/input/datasetextended.csv";
     rml:referenceFormulation ql:CSV
   ];
   rr:subjectMap [

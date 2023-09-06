@@ -13,7 +13,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rules.csv";
+	rml:source "xxx/mappings/input/rules.csv";
     rml:referenceFormulation ql:CSV
   ];
  
@@ -42,7 +42,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/rules.csv";
+	rml:source "xxx/mappings/input/rules.csv";
     rml:referenceFormulation ql:CSV
   ];
  
@@ -79,7 +79,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/atoms.csv";
+	rml:source "xxx/mappings/input/atoms.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -110,7 +110,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_args.csv";
+	rml:source "xxx/mappings/input/has_args.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -144,7 +144,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/predicates.csv";
+	rml:source "xxx/mappings/input/predicates.csv";
     rml:referenceFormulation ql:CSV
   ];
   
@@ -171,7 +171,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/args.csv";
+	rml:source "xxx/mappings/input/args.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -192,7 +192,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_atoms.csv";
+	rml:source "xxx/mappings/input/has_atoms.csv";
     rml:referenceFormulation ql:CSV
   ];
 

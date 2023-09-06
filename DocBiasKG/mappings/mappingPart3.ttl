@@ -14,7 +14,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/groundrules.csv";
+	rml:source "xxx/mappings/input/groundrules.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -63,7 +63,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_groundatoms_obs.csv";
+	rml:source "xxx/mappings/input/has_groundatoms_obs.csv";
     rml:referenceFormulation ql:CSV
   ];
 
@@ -104,7 +104,7 @@
   a rr:TriplesMap;
 
   rml:logicalSource [
-	rml:source "/Users/russo/git/SDM-RDFizer/mappings/input/has_groundatoms_rva.csv";
+	rml:source "xxx/mappings/input/has_groundatoms_rva.csv";
     rml:referenceFormulation ql:CSV
   ];
 
