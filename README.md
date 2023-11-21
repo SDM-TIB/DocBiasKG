@@ -1,3 +1,5 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 # Doc-Bias KG
 
 A hybrid AI system capable of identifying bias patterns in datasets used by predictive AI models. The proposed system captures knowledge about dataset characteristics and represents it as factual statements in a knowledge graph.
