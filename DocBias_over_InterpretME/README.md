@@ -2,11 +2,7 @@
 
 # Documenting Bias over InterpretME
 ![Design Pattern of Tracing as a Principled Approach](https://raw.githubusercontent.com/SDM-TIB/DocBiasKG/main/images/Fake_News_InterpretME-1.png "Design Pattern of Tracing as a Principled Approach")
-Figure depicts a use-case utilizing a principled Hybrid AI technique. 
-The InterpretME pipeline preprocesses input datasets, e.g., News collection datasets 
-in this use-case and optimizes hyperparameters for the ML classification task of detecting fake news. 
-The trained model makes predictions, and LIME provides local explanations for each news. 
-In the tracing layer, InterpretME creates the InterpretME KG by tracing metadata and semantically interpreting the traces.
+The figure represents a use-case involving a principled Hybrid AI methodology. ``InterpretME`` is a principled hybrid AI framework used to trace bias involved in the predictive pipeline. In the training layer, the pipeline accepts raw data on News, Users, and Publishers from two different benchmark datasets: Dataset 1: BuzzFeed News and Dataset 2: PolitiFact. Further hyperparameter optimization is carried out to train the model on the best-suited parameters obtained from AutoML. In this scenario, Random Forest classifier model is used to select the top-ranking features for training the decision tree classifier. In addition, `LIME` generates local explanations for all instances in the news dataset. Simultaneously, all traced metadata obtained during pipeline execution is used semantically to generate ``InterpretME KG``.
 
 ## Getting Started to execute DocBias over InterpretME 
 
