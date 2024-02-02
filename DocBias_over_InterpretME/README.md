@@ -20,8 +20,9 @@ You can run the pipeline with the News collection datasets.
 where`<config_json>` is one of `example_buzz.json` and `example_politi.json`.
 
 After running the pipeline, the produced plots can be found in `./interpretme/output/`.
-Once the data is uploaded into the SPARQL endpoint, DeTrusty can be used to answer queries.
-In `queries/templates` you can find query templates (placeholders marked with `$$`) for answering the following questions:
+Once the data is uploaded into the SPARQL endpoint. 
+In the folder `queries/news` you can find the queries populated for the News collection dataset.
+The queries can be executed for answering the following questions:
 
 1. Counting news with prediction probability for `Class:Real` in BuzzFeed dataset.
 2. Counting news with prediction probability for `Class:Fake` in BuzzFeed dataset.
@@ -29,12 +30,7 @@ In `queries/templates` you can find query templates (placeholders marked with `$
 4. Counting news with prediction probability for `Class:Fake` in PolitiFact dataset.
 5. Computing Average probability, MAX probability and MIN probability.
 
-In the folder `queries/news` you can find the query templates populated for the News collection dataset.
-Since InterpretME integrates DeTrusty, you can use the following command to execute the first query for the News collection dataset:
-```bash
-docker exec -it interpretme bash -c "cd example; python example_query.py queries/news/Q1.sparql"
-```
 
-For more information about InterpretME, check its [GitHub repository](https://github.com/SDM-TIB/InterpretME). <br>
-For more information about DeTrusty, check its [GitHub repository](https://github.com/SDM-TIB/DeTrusty).
 
+
+For more information about InterpretME, check its [GitHub repository](https://github.com/SDM-TIB/InterpretME).

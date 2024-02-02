@@ -1,0 +1,11 @@
+#PoliticFacts
+#Counting news with prediction probability for Class:Real
+
+SELECT DISTINCT  ?o1 (count(distinct ?news) as ?num)
+WHERE {
+        
+        ?run <http://interpretme.org/vocab/hasRun> <http://interpretme.org/entity/1696602708810> .
+        ?run <http://interpretme.org/vocab/hasEntity> ?news.
+        ?run <http://interpretme.org/vocab/hasClass> <http://interpretme.org/entity/0>. 
+       ?run <http://interpretme.org/vocab/hasPredictionProbability> ?o1.
+} GROUP BY ?o1

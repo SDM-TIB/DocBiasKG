@@ -1,0 +1,17 @@
+#Queries for probabilityAVG, MAX, MIN
+
+SELECT DISTINCT ?news  ?probability (AVG(?value) as ?num1)  (MAX(?value) as ?num2)  (MIN(?value) as ?num3)
+WHERE {
+        #FILTER( ?news =<http://interpretme.org/entity/BuzzFeed_Fake_4_1696779530838> )
+        ?news a <http://interpretme.org/vocab/TargetEntity> .
+        ?news <http://interpretme.org/vocab/hasInterpretedFeature> ?interpretedFeature .
+        ?interpretedFeature  <http://interpretme.org/vocab/hasFeatureWeight> ?featureWeight .
+         ?featureWeight <http://interpretme.org/vocab/hasFeature> ?feature .
+        ?featureWeight <http://interpretme.org/vocab/hasWeight> ?value .
+        ?news <http://interpretme.org/vocab/hasEntityClassProbability> ?classProb .
+        ?classProb <http://interpretme.org/vocab/hasPredictionProbability> ?probability .
+        ?classProb <http://interpretme.org/vocab/hasClass> ?targetClass .
+       FILTER(?targetClass = <http://interpretme.org/entity/1>) 
+       FILTER(regex(?feature,"Publisher"))
+} GROUP BY ?news  ?probability 
+Order by Desc(?probability) ?news
