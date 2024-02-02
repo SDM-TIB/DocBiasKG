@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  interpretmekg:
+    image: prohde/virtuoso-opensource-7:7.2.6
+    container_name: interpretmekg
+    volumes:
+      - ./rdf-dump:/database/toLoad
+      - ./interpretmekg:/database
+    ports:
+      - "8891:8890"
+      - "1116:1111"
+    networks:
+      - interpretme
+
+  interpretme:
+    image: sdmtib/interpretme:latest
+    container_name: interpretme
+    volumes:
+      - ./dataset:/InterpretME/dataset
+      - ./:/InterpretME/example
+    networks:
+      - interpretme
+
+networks:
+  interpretme:
+    external: false
