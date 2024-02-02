@@ -28,5 +28,4 @@ The queries can be executed for answering the following questions:
 
 
 
-
 For more information about InterpretME, check its [GitHub repository](https://github.com/SDM-TIB/InterpretME).
