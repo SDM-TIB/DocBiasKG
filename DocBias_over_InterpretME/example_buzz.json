@@ -1,5 +1,5 @@
 {
-  "path_to_data": "dataset/BuzzFeed_PubCred.csv",
+  "path_to_data": "dataset/BuzzFeed_PubCred_Scenario1.csv",
   "Type": "News",
   "Index_var": "NewsID",
   "Independent_variable": ["NewsID","UserID","Num","PublisherID","FactChecker","PubCred"],
